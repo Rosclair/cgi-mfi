@@ -52,9 +52,6 @@
         <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
       </div>
     </div>
-    <button class="ticker-pause-btn" id="ticker-pause" aria-pressed="false"
-            onclick="(function(btn){const t=document.querySelector('.ticker-track');const p=btn.getAttribute('aria-pressed')==='true';t.style.animationPlayState=p?'running':'paused';btn.setAttribute('aria-pressed',p?'false':'true');btn.textContent=p?'⏸':'▶';})(this)"
-            aria-label="Mettre en pause le ticker">⏸</button>
   </div>
 </div>
 
@@ -67,6 +64,7 @@
   </div>
   <div class="top-bar-right">
     <a href="#join">Ouverture Compte</a>
+    <a href="#simulator">Simulateur de Crédit</a>
     <div class="top-lang" role="navigation" aria-label="Sélection de langue">
       <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
       <button onclick="switchLang('en', this)" aria-label="English">EN</button>
@@ -80,12 +78,6 @@
 <nav class="navbar" id="mainNav" aria-label="Navigation principale">
   <div class="navbar-inner">
 
-    <!-- Actions - gauche -->
-    <div class="nav-actions">
-      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
-      <a href="#investors" class="btn btn-primary">Investir</a>
-    </div>
-
     <!-- Hamburger -->
     <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
       <span class="ham-bar"></span>
@@ -96,8 +88,8 @@
     <!-- Menu - centre -->
     <ul class="nav-menu" id="nav-menu-id" role="menubar">
       <li class="nav-item" role="none">
-        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
-          CGI-FINANCE
+        <a href="#about" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
@@ -108,17 +100,7 @@
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
-          Produits &amp; Services
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="nav-dropdown" role="menu">
-          <a href="#products" role="menuitem">MICRO-CRÉDIT 2,5%</a>
-          <a href="#products" role="menuitem">CGI DJANGUI+</a>
-          <a href="#products" role="menuitem">CGI BUILD</a>
-          <a href="#products" role="menuitem">Crédit Solidaire Groupe</a>
-          <a href="#products" role="menuitem">Crédit Agricole</a>
-        </div>
+        <a href="#products" class="nav-link" role="menuitem" aria-haspopup="menu">Produits &amp; Services</a>
       </li>
       <li class="nav-item" role="none">
         <a href="#investors" class="nav-link" role="menuitem">Investisseurs</a>
@@ -130,12 +112,15 @@
         <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
       </li>
       <li class="nav-item" role="none">
-        <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
-      </li>
-      <li class="nav-item" role="none">
-        <a href="#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
       </li>
     </ul>
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <a href="#join" class="nav-link nav-sim" role="menuitem">Devenir Membre</a>
+      <a href="#investors" class="btn btn-primary">Investir</a>
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
+    </div>
 
     <!-- Logo - droite -->
     <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
@@ -289,54 +274,53 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+     ============================== -->
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
       <div class="brand">Community Growth Initiative</div>
       <div class="tagline">empower differently</div>
-      <p>Microfinance inclusive de 1ère catégorie - Agrément COBAC en cours. Finance accessible, transparente et ancrée dans les réalités locales.</p>
+      <p>Nous accompagnons les communautés avec une finance proche, transparente et accessible.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer">F</a>
-        <a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
+        <!--a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
         <a href="#" class="social-btn" aria-label="YouTube CGI MFI" target="_blank" rel="noopener noreferrer">Y</a>
-        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a-->
       </div>
     </div>
     <div class="footer-col">
       <h4>Nos Produits</h4>
-      <a href="index.html#products">MICRO-CRÉDIT 2,5%</a>
-      <a href="index.html#products">CGI DJANGUI+</a>
-      <a href="index.html#products">CGI BUILD</a>
-      <a href="index.html#products">Crédit Solidaire</a>
-      <a href="index.html#products">Crédit Agricole</a>
-      <a href="simulateur-credit.html">Simulateur de Crédit</a>
+      <a href="#products">MICRO-CRÉDIT</a>
+      <a href="#products">CGI DJANGUI+</a>
+      <a href="#products">CGI BUILD</a>
+      <a href="#products">Crédit Solidaire</a>
+      <a href="#products">Crédit Agricole</a>
     </div>
     <div class="footer-col">
-      <h4>Informations</h4>
-      <a href="index.html#about">Qui sommes-nous</a>
-      <a href="index.html#rse">Impact &amp; RSE</a>
-      <a href="index.html#investors">Investisseurs</a>
-      <a href="index.html#join">Devenir Membre</a>
+      <h4>CGI FINANCE</h4>
+      <a href="#about">Qui sommes-nous</a>
+      <a href="#rse">Impact &amp; RSE</a>
+      <a href="#investors">Investir</a>
+      <a href="#join">Devenir Membre</a>
       <a href="cgi-foundation.html">CGI Foundation</a>
-      <a href="agenda.html">Agenda</a>
-      <a href="faq.html">FAQ</a>
     </div>
     <div class="footer-col footer-contact">
       <h4>Nos Agences</h4>
-      <p>🏛 Siège : Yaoundé, Marché Mokolo</p>
-      <p>📍 Bafoussam, Tamdja - face PMUC</p>
+      <p>Siège : Yaoundé, Marché Mokolo</p>
       <h4 style="margin-top:16px;">Contact</h4>
-      <p>📞 <a href="tel:+237693539586">+237 693 53 95 86</a></p>
-      <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
-      <p>🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+      <p><a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p><a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>Lun–Ven : 7h30–16h30 <br> Sam : 8h–13h</p>
     </div>
   </div>
   <div class="footer-bottom">
+
     <p class="footer-copyright">© 2026 Community Growth Initiative (CGI) - Tous droits réservés.</p>
     <div class="footer-legal">
-      <a href="cgi-confidentialite.html" aria-current="page">Mentions Légales</a>
-      <a href="cgi-confidentialite.html" aria-current="page">Confidentialité</a>
+      <a href="cgi-confidentialite.html">Mentions Légales</a>
+      <a href="cgi-confidentialite.html">Confidentialité</a>
       <a href="cgi-cgu.html">CGU</a>
       <a href="sitemap.html">Sitemap</a>
     </div>

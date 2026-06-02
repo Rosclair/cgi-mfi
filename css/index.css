@@ -663,7 +663,7 @@
   .sim-inner { grid-template-columns: 1fr 1fr; gap: 64px; }
 
   /* RSE */
-  .rse-grid-top { grid-template-columns: repeat(3, 1fr); }
+  .rse-grid-top { grid-template-columns: repeat(2, 1fr); }
 
   /* Espace : 2 cols */
   .espace-grid { grid-template-columns: 1fr 1fr; gap: 64px; }

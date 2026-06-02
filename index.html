@@ -67,9 +67,6 @@
         <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
       </div>
     </div>
-    <button class="ticker-pause-btn" id="ticker-pause" aria-pressed="false"
-            onclick="(function(btn){const t=document.querySelector('.ticker-track');const p=btn.getAttribute('aria-pressed')==='true';t.style.animationPlayState=p?'running':'paused';btn.setAttribute('aria-pressed',p?'false':'true');btn.textContent=p?'⏸':'▶';})(this)"
-            aria-label="Mettre en pause le ticker">⏸</button>
   </div>
 </div>
 
@@ -82,6 +79,7 @@
   </div>
   <div class="top-bar-right">
     <a href="#join">Ouverture Compte</a>
+    <a href="#simulator">Simulateur de Crédit</a>
     <div class="top-lang" role="navigation" aria-label="Sélection de langue">
       <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
       <button onclick="switchLang('en', this)" aria-label="English">EN</button>
@@ -95,12 +93,6 @@
 <nav class="navbar" id="mainNav" aria-label="Navigation principale">
   <div class="navbar-inner">
 
-    <!-- Actions - gauche -->
-    <div class="nav-actions">
-      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
-      <a href="#investors" class="btn btn-primary">Investir</a>
-    </div>
-
     <!-- Hamburger -->
     <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
       <span class="ham-bar"></span>
@@ -111,8 +103,8 @@
     <!-- Menu - centre -->
     <ul class="nav-menu" id="nav-menu-id" role="menubar">
       <li class="nav-item" role="none">
-        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
-          CGI-FINANCE
+        <a href="#about" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
@@ -123,17 +115,7 @@
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
-          Produits &amp; Services
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="nav-dropdown" role="menu">
-          <a href="#products" role="menuitem">MICRO-CRÉDIT 2,5%</a>
-          <a href="#products" role="menuitem">CGI DJANGUI+</a>
-          <a href="#products" role="menuitem">CGI BUILD</a>
-          <a href="#products" role="menuitem">Crédit Solidaire Groupe</a>
-          <a href="#products" role="menuitem">Crédit Agricole</a>
-        </div>
+        <a href="#products" class="nav-link" role="menuitem" aria-haspopup="menu">Produits &amp; Services</a>
       </li>
       <li class="nav-item" role="none">
         <a href="#investors" class="nav-link" role="menuitem">Investisseurs</a>
@@ -145,12 +127,15 @@
         <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
       </li>
       <li class="nav-item" role="none">
-        <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
-      </li>
-      <li class="nav-item" role="none">
-        <a href="#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
       </li>
     </ul>
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <a href="#join" class="nav-link nav-sim" role="menuitem">Devenir Membre</a>
+      <a href="#investors" class="btn btn-primary">Investir</a>
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
+    </div>
 
     <!-- Logo - droite -->
     <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
@@ -192,7 +177,7 @@
         Zéro frais caché. Zéro surprise au guichet.
       </p>
       <div class="hero-cta">
-        <a href="#join" class="btn btn-primary">Devenir Membre - à partir de 4 900 FCFA</a>
+        <a href="#join" class="btn btn-primary">Devenir Membre</a>
         <a href="#products" class="btn btn-hero-outline">Découvrir nos produits</a>
       </div>
     </div>
@@ -299,28 +284,24 @@
 <!-- VISION STRIP -->
 <div class="vision-strip" aria-label="Vision et valeurs CGI">
   <div class="vision-item">
-    <div class="vision-icon" aria-hidden="true">🎯</div>
     <div>
       <div class="vision-label">Mission</div>
       <div class="vision-text">Finance inclusive pour les femmes, les PME et les zones rurales.</div>
     </div>
   </div>
   <div class="vision-item">
-    <div class="vision-icon" aria-hidden="true">🏛</div>
     <div>
       <div class="vision-label">Confiance &amp; Transparence</div>
       <div class="vision-text">Engagement vers les standards réglementaires régionaux</div>
     </div>
   </div>
   <div class="vision-item">
-    <div class="vision-icon" aria-hidden="true">🌍</div>
     <div>
       <div class="vision-label">Impact ESG</div>
       <div class="vision-text">Aligné sur les SND30 et les ODD 1, 5, 8, 10</div>
     </div>
   </div>
   <div class="vision-item">
-    <div class="vision-icon" aria-hidden="true">🚀</div>
     <div>
       <div class="vision-label">Lancement</div>
       <div class="vision-text">Janvier 2027 - Yaoundé, Région du Centre, Cameroun</div>
@@ -609,6 +590,12 @@
 
     <div class="rse-grid-top reveal">
       <div class="rse-card">
+        <div class="rse-card-tag">SND30 - Développement Économique Local</div>
+        <h3 class="rse-card-title">Investir dans les territoires et l'économie réelle</h3>
+        <p class="rse-card-text">CGI privilégie les activités génératrices de revenus qui renforcent les chaînes de valeur locales, stimulent le commerce, soutiennent l'agriculture et favorisent l'émergence d'une économie plus résiliente. Chaque financement accordé participe directement au développement économique des communautés camerounaises.</p>
+        <div class="rse-card-kpi">100% <span>des financements orientés vers des activités productives et créatrices de valeur.</span></div>
+      </div>
+      <div class="rse-card">
         <div class="rse-card-tag">ODD 5 - Égalité femmes-hommes</div>
         <h3 class="rse-card-title">Inclusion financière des femmes</h3>
         <p class="rse-card-text">Au moins <strong>60% du portefeuille de crédits CGI est alloué aux femmes entrepreneures</strong> dès la première année d'exploitation. Ce n'est pas un quota symbolique - c'est une condition d'évaluation de la performance de notre équipe.</p>
@@ -638,7 +625,7 @@
         </div>
         <div class="rse-gov-item">
           <div class="rse-gov-name">Conformité COBAC totale</div>
-          <div class="rse-gov-text">Agrément EMF 1ère catégorie en cours. Respect des normes prudentielles COBAC : ratio de solvabilité, liquidité, provision pour créances douteuses.</div>
+          <div class="rse-gov-text">Respect des normes prudentielles COBAC : ratio de solvabilité, liquidité, provision pour créances douteuses.</div>
         </div>
         <div class="rse-gov-item">
           <div class="rse-gov-name">Assemblée Générale annuelle</div>
@@ -718,7 +705,7 @@
               <button type="button" class="btn-link"
                       onclick="alert('Fonctionnalité disponible après le lancement.')">Mot de passe oublié ?</button>
             </div>
-            <button class="espace-submit" onclick="espaceLogin()">Pré-inscription (lancement JANVIER 2027)</button>
+            <button class="espace-submit" onclick="espaceLogin()">Je prend les parts</button>
             <p class="espace-note">Inscrivez-vous maintenant - accès prioritaire à l'ouverture</p>
           </div>
 
@@ -748,28 +735,24 @@
 
         <div class="espace-feat-list">
           <div class="espace-feat">
-            <div class="espace-feat-icon" aria-hidden="true">🤝</div>
             <div>
               <div class="espace-feat-title">Profil &amp; Informations Client</div>
               <p class="espace-feat-desc">Consultez et mettez à jour vos informations personnelles, votre statut d'adhésion et votre historique de transactions CGI.</p>
             </div>
           </div>
           <div class="espace-feat">
-            <div class="espace-feat-icon" aria-hidden="true">💳</div>
             <div>
               <div class="espace-feat-title">Demande de Crédit en Ligne</div>
               <p class="espace-feat-desc">Soumettez votre dossier de crédit depuis chez vous. Délai de réponse : 48h ouvrables. Suivi en temps réel de votre dossier.</p>
             </div>
           </div>
           <div class="espace-feat">
-            <div class="espace-feat-icon" aria-hidden="true">📊</div>
             <div>
               <div class="espace-feat-title">Suivi de Dossier &amp; Épargne</div>
               <p class="espace-feat-desc">Consultez l'état de votre demande de crédit, votre solde d'épargne CGI BUILD et l'historique de vos versements et remboursements.</p>
             </div>
           </div>
           <div class="espace-feat">
-            <div class="espace-feat-icon" aria-hidden="true">📄</div>
             <div>
               <div class="espace-feat-title">Documents &amp; Attestations</div>
               <p class="espace-feat-desc">Téléchargez vos relevés de compte, attestations d'adhésion, contrats de crédit et reçus de paiement en PDF depuis votre espace.</p>
@@ -799,7 +782,7 @@
     <p class="comm-subtitle">Les entrepreneurs que CGI finance - petits commerçants, femmes chefs d'entreprise, agriculteurs et tontinards</p>
     <div class="comm-grid reveal">
       <div class="comm-card">
-        <div class="comm-card-img" aria-hidden="true">🛒</div>
+        <div class="comm-card-img" aria-hidden="true"></div>
         <div class="comm-card-body">
           <div class="comm-card-name">Histoire de Succès</div>
           <div class="comm-card-role">Commerce &amp; Négoce</div>
@@ -807,7 +790,7 @@
         </div>
       </div>
       <div class="comm-card">
-        <div class="comm-card-img" aria-hidden="true">🌾</div>
+        <div class="comm-card-img" aria-hidden="true"></div>
         <div class="comm-card-body">
           <div class="comm-card-name">Agriculture</div>
           <div class="comm-card-role">Hauts-Plateaux Ouest</div>
@@ -815,7 +798,7 @@
         </div>
       </div>
       <div class="comm-card">
-        <div class="comm-card-img" aria-hidden="true">👩‍🍳</div>
+        <div class="comm-card-img" aria-hidden="true"></div>
         <div class="comm-card-body">
           <div class="comm-card-name">Restauration</div>
           <div class="comm-card-role">DJANGUI Féminin</div>
@@ -823,7 +806,7 @@
         </div>
       </div>
       <div class="comm-card">
-        <div class="comm-card-img" aria-hidden="true">💻</div>
+        <div class="comm-card-img" aria-hidden="true"></div>
         <div class="comm-card-body">
           <div class="comm-card-name">Tech &amp; Innovation</div>
           <div class="comm-card-role">Jeune Entrepreneur</div>
@@ -831,7 +814,7 @@
         </div>
       </div>
       <div class="comm-card">
-        <div class="comm-card-img" aria-hidden="true">🎓</div>
+        <div class="comm-card-img" aria-hidden="true"></div>
         <div class="comm-card-body">
           <div class="comm-card-name">Éducation</div>
           <div class="comm-card-role">Services Locaux</div>
@@ -1133,14 +1116,14 @@
       <p>Nous accompagnons les communautés avec une finance proche, transparente et accessible.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer">F</a>
-        <a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
+        <!--a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
         <a href="#" class="social-btn" aria-label="YouTube CGI MFI" target="_blank" rel="noopener noreferrer">Y</a>
-        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a-->
       </div>
     </div>
     <div class="footer-col">
       <h4>Nos Produits</h4>
-      <a href="#products">MICRO-CRÉDIT 2,5% - Crédit 48h</a>
+      <a href="#products">MICRO-CRÉDIT</a>
       <a href="#products">CGI DJANGUI+</a>
       <a href="#products">CGI BUILD</a>
       <a href="#products">Crédit Solidaire</a>
@@ -1150,21 +1133,17 @@
       <h4>CGI FINANCE</h4>
       <a href="#about">Qui sommes-nous</a>
       <a href="#rse">Impact &amp; RSE</a>
-      <a href="#community">Communauté</a>
-      <a href="#investors">Investisseurs</a>
+      <a href="#investors">Investir</a>
       <a href="#join">Devenir Membre</a>
       <a href="cgi-foundation.html">CGI Foundation</a>
-      <a href="agenda.html">Agenda 2026</a>
-      <a href="faq.html">FAQ</a>
     </div>
     <div class="footer-col footer-contact">
       <h4>Nos Agences</h4>
-      <p>🏛 Siège : Yaoundé, Marché Mokolo</p>
-      <p>📍 Bafoussam, Tamdja - face PMUC</p>
+      <p>Siège : Yaoundé, Marché Mokolo</p>
       <h4 style="margin-top:16px;">Contact</h4>
-      <p>📞 <a href="tel:+237693539586">+237 693 53 95 86</a></p>
-      <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
-      <p>🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+      <p><a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p><a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>Lun–Ven : 7h30–16h30 <br> Sam : 8h–13h</p>
     </div>
   </div>
   <div class="footer-bottom">
