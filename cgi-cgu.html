@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conditions Générales d'Utilisation de CGI - Cadre juridique régissant l'utilisation du site et des services de microfinance de Community Growth Initiative. Yaoundé, Cameroun.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="CGU - Conditions Générales d'Utilisation | CGI Community Growth Initiative">
+  <meta property="og:description" content="CGU CGI : accès aux services, crédit, épargne, propriété intellectuelle, droit applicable COBAC CEMAC. Microfinance inclusive au Cameroun.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cgi-mfi.com/cgi-cgu.html">
+  <meta property="og:image" content="#">
+  <meta property="og:locale" content="fr_CM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="#">
+  <meta name="twitter:image" content="#">
+  <link rel="canonical" href="https://www.cgi-mfi.com/cgi-cgu.html">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>CGU - Conditions Générales d'Utilisation | CGI Community Growth Initiative</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/cgi-cgu.css">
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION -->
+<div id="loadingBar" aria-hidden="true"></div>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="region" aria-label="Actualités en cours">
+  <div class="ticker-inner">
+    <div class="ticker-label">📢 ACTUALITÉS</div>
+    <div class="ticker-scroll">
+      <div class="ticker-track">
+        <span class="ticker-item">CGI FINANCE - Lancement officiel Janvier 2027 - Yaoundé</span>
+        <span class="ticker-item">Adhésion à partir de 4 900 FCFA - La microfinance la plus accessible du marché</span>
+        <span class="ticker-item">MICRO-CRÉDIT : réponse garantie en 48h - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Finance inclusive à impact - Cameroun</span>
+        <!-- Doublon pour animation continue -->
+        <span class="ticker-item">CGI FINANCE - Lancement officiel Janvier 2027 - Yaoundé</span>
+        <span class="ticker-item">Adhésion à partir de 4 900 FCFA - La microfinance la plus accessible du marché</span>
+        <span class="ticker-item">MICRO-CRÉDIT : réponse garantie en 48h - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Finance inclusive à impact - Cameroun</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar" role="complementary" aria-label="Informations de contact">
+  <div class="top-bar-left">
+    <span>🏛 Siège social : Yaoundé - Cameroun</span>
+    <a href="tel:+237693539586">📞 +237 693 53 95 86</a>
+    <a href="mailto:wh@cgi-mfi.com">✉ wh@cgi-mfi.com</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#join">Espace Membre</a>
+    <a href="simulateur-credit.html">Simulateur de Crédit</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="faq.html">FAQ</a>
+    <div class="top-lang" role="navigation" aria-label="Sélection de langue">
+      <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
+      <button onclick="switchLang('en', this)" aria-label="English">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="mainNav" aria-label="Navigation principale">
+  <div class="navbar-inner">
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
+      <a href="index.html#join" class="btn btn-outline">Devenir Membre</a>
+      <a href="index.html#investors" class="btn btn-primary">Investir</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
+    <!-- Menu - centre -->
+    <ul class="nav-menu" id="nav-menu-id" role="menubar">
+      <li class="nav-item" role="none">
+        <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#about" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI-MFI
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#about" role="menuitem">Notre Mission</a>
+          <a href="index.html#about" role="menuitem">Vision 2031</a>
+          <a href="index.html#rse"   role="menuitem">Impact &amp; RSE</a>
+          <a href="index.html#about" role="menuitem">Gouvernance</a>
+          <a href="cgi-foundation.html" role="menuitem">CGI Foundation</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#products" class="nav-link" role="menuitem" aria-haspopup="menu">
+          Produits
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#products" role="menuitem">MICRO-CRÉDIT</a>
+          <a href="index.html#products" role="menuitem">CGI DJANGUI+</a>
+          <a href="index.html#products" role="menuitem">CGI BUILD</a>
+          <a href="index.html#products" role="menuitem">Crédit Solidaire Groupe</a>
+          <a href="index.html#products" role="menuitem">Crédit Agricole</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#investors" class="nav-link" role="menuitem">Investisseurs</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="agenda.html" class="nav-link" role="menuitem">Agenda</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
+      </li>
+    </ul>
+
+    <!-- Logo - droite -->
+    <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
+      <div class="nav-logo-mark">
+        <img src="images/logo.png" alt="Logo CGI MFI" class="nav-logo-img"
+             width="120" height="40" decoding="async"
+             onerror="this.onerror=null; this.alt='CGI MFI';">
+      </div>
+      <div class="nav-logo-text">
+        <div class="brand">Community Growth</div>
+        <div class="tagline">empower differently</div>
+      </div>
+    </a>
+
+  </div>
+</nav>
+
+<noscript>
+  <div style="background:#c0392b;color:#fff;padding:16px;text-align:center;">
+    Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.
+  </div>
+</noscript>
+
+<!-- BASCULE DE LANGUE -->
+<div class="lang-switch-bar">
+  <span class="lang-switch-label">Langue / Language :</span>
+  <button class="lang-btn active" data-lv="fr" onclick="switchPageLang('fr', this)">🇫🇷 Français</button>
+  <button class="lang-btn" data-lv="en" onclick="switchPageLang('en', this)">🇬🇧 English</button>
+</div>
+
+<!-- ==============================
+     VERSION FRANÇAISE
+     ============================== -->
+<div data-lang="fr" class="show">
+
+  <!-- HERO FR -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">CGU</span>
+      </nav>
+      <div class="page-eyebrow">Cadre Juridique</div>
+      <h1 class="page-title">Conditions Générales<br>d'Utilisation</h1>
+      <p class="page-subtitle">En accédant au site web CGI et en utilisant ses services financiers, vous acceptez sans réserve les présentes Conditions Générales d'Utilisation.</p>
+      <div class="page-hero-badge">📋 En vigueur : Juin 2026 · Version 1.0</div>
+    </div>
+  </div>
+
+  <!-- CONTENU CGU FR -->
+  <section class="page-body" aria-label="Conditions Générales d'Utilisation - version française">
+    <div class="container">
+
+      <p class="cgu-version-note">Dernière mise à jour : Juin 2026 · Document opposable à tout utilisateur du site cgi-mfi.com</p>
+
+      <div class="highlight-box" role="note">
+        <p><strong>Important :</strong> Ce document régit l'utilisation du site web CGI et la souscription à ses services de microfinance. Veuillez le lire attentivement avant toute utilisation ou souscription.</p>
+      </div>
+
+      <!-- TABLE DES MATIÈRES -->
+      <nav class="cgu-toc" aria-label="Navigation dans les CGU">
+        <div class="cgu-toc-title">Sommaire</div>
+        <a href="#cgu-editeur">1. Éditeur</a>
+        <a href="#cgu-acces">2. Accès aux Services</a>
+        <a href="#cgu-credit">3. Services de Crédit</a>
+        <a href="#cgu-epargne">4. Services d'Épargne</a>
+        <a href="#cgu-pi">5. Propriété Intellectuelle</a>
+        <a href="#cgu-responsabilite">6. Responsabilité</a>
+        <a href="#cgu-donnees">7. Données Personnelles</a>
+        <a href="#cgu-droit">8. Droit Applicable</a>
+        <a href="#cgu-modification">9. Modifications</a>
+        <a href="#cgu-contact">10. Contact</a>
+      </nav>
+
+      <div class="content-section" id="cgu-editeur">
+        <h2>1. Identification de l'Éditeur</h2>
+        <p>Le site <strong>cgi-mfi.com</strong> est édité par <strong>Community Growth Initiative (CGI)</strong>, COOP-CA de 1ère catégorie dont le siège social est à Yaoundé, Cameroun. Agrément COBAC en cours d'obtention.</p>
+        <div class="info-box">
+          <h4>✉ wh@cgi-mfi.com</h4>
+          <p>Community Growth Initiative · Yaoundé, Cameroun · 📞 +237 693 53 95 86 · Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+        </div>
+      </div>
+
+      <div class="content-section" id="cgu-acces">
+        <h2>2. Conditions d'Accès aux Services</h2>
+        <p>L'accès aux services CGI est réservé aux personnes remplissant l'ensemble des conditions suivantes :</p>
+        <ul>
+          <li>Avoir au moins 18 ans révolus</li>
+          <li>Être résident ou ressortissant camerounais en règle</li>
+          <li>Fournir des informations exactes, complètes et à jour lors de l'inscription</li>
+          <li>Ne pas utiliser les services à des fins illicites ou contraires aux bonnes mœurs</li>
+          <li>Accepter sans réserve les présentes CGU ainsi que la <a href="cgi-confidentialite.html">Politique de Confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-credit">
+        <h2>3. Services de Crédit - Dispositions Spécifiques</h2>
+
+        <h3>3.1 Instruction des demandes</h3>
+        <ul>
+          <li>Toute demande fait l'objet d'une instruction conformément à la politique de crédit CGI</li>
+          <li>CGI se réserve le droit de refuser toute demande sans avoir à s'en justifier</li>
+          <li>Le taux applicable est celui en vigueur à la date de signature du contrat de crédit</li>
+          <li>Le dossier complet (pièces KYC, justificatif d'activité) doit être fourni avant toute décision</li>
+        </ul>
+
+        <h3>3.2 Remboursement</h3>
+        <ul>
+          <li>Tout retard génère des pénalités conformément aux modalités du contrat signé</li>
+          <li>En cas de défaut persistant, CGI peut recourir aux voies légales de recouvrement</li>
+          <li>Le remboursement anticipé est possible sans pénalité supplémentaire</li>
+          <li>Les mensualités sont exigibles aux dates fixées dans l'échéancier contractuel</li>
+        </ul>
+
+        <h3>3.3 Taux Effectif Global (TEG)</h3>
+        <p>Le TEG est communiqué avant toute signature, calculé conformément à la réglementation CEMAC sur le crédit à la consommation. Il intègre le taux d'intérêt nominal, les frais de dossier et toutes charges obligatoires. Aucun frais caché ne peut être réclamé postérieurement à la signature du contrat.</p>
+      </div>
+
+      <div class="content-section" id="cgu-epargne">
+        <h2>4. Services d'Épargne</h2>
+        <ul>
+          <li>Les taux d'intérêt affichés sont garantis à la signature pour les produits bloqués</li>
+          <li>Les retraits anticipés sur comptes bloqués sont soumis aux pénalités contractuelles prévues</li>
+          <li>Le dépôt minimum d'ouverture est défini dans la grille tarifaire en vigueur</li>
+          <li>CGI s'engage à maintenir des ratios prudentiels conformes aux exigences COBAC</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-pi">
+        <h2>5. Propriété Intellectuelle</h2>
+        <p>L'ensemble du contenu du site cgi-mfi.com (textes, images, logos, graphismes, marques, typographies) est protégé par le droit de la propriété intellectuelle en vigueur au Cameroun et par les conventions internationales applicables.</p>
+        <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie du contenu, par quelque procédé que ce soit, est strictement interdite sans autorisation écrite préalable de CGI.</p>
+      </div>
+
+      <div class="content-section" id="cgu-responsabilite">
+        <h2>6. Limitation de Responsabilité</h2>
+        <ul>
+          <li>CGI ne garantit pas l'accès permanent et ininterrompu au site web</li>
+          <li>Les informations du site sont purement informatives et ne constituent pas un conseil financier personnalisé</li>
+          <li>CGI décline toute responsabilité pour utilisation frauduleuse des identifiants due à une négligence de l'utilisateur</li>
+          <li>CGI ne saurait être tenue responsable des dommages indirects résultant de l'utilisation du site</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-donnees">
+        <h2>7. Données Personnelles</h2>
+        <p>Le traitement des données personnelles des utilisateurs est régi par la <a href="cgi-confidentialite.html">Politique de Confidentialité CGI</a>, document distinct consultable sur ce site. CGI s'engage à respecter la réglementation camerounaise en vigueur relative à la protection des données personnelles.</p>
+      </div>
+
+      <div class="content-section" id="cgu-droit">
+        <h2>8. Droit Applicable et Litiges</h2>
+        <p>Les présentes CGU sont régies par le droit camerounais. Tout litige sera soumis aux tribunaux compétents de Yaoundé après tentative obligatoire de règlement amiable d'une durée minimale de 30 jours.</p>
+        <p>Pour les litiges financiers régulés, la compétence COBAC peut être invoquée conformément à la réglementation CEMAC applicable aux établissements de microfinance.</p>
+      </div>
+
+      <div class="content-section" id="cgu-modification">
+        <h2>9. Modification des CGU</h2>
+        <p>CGI se réserve le droit de modifier les présentes Conditions Générales à tout moment. Les modifications entrent en vigueur dès leur publication sur le site. L'utilisation continue des services après modification vaut acceptation des nouvelles conditions. La version en vigueur est toujours consultable sur cette page.</p>
+      </div>
+
+      <div class="content-section" id="cgu-contact">
+        <h2>10. Contact</h2>
+        <div class="info-box">
+          <h4>📋 CGI - Service Juridique &amp; Conformité</h4>
+          <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a> · Community Growth Initiative · Yaoundé, Cameroun · +237 693 53 95 86</p>
+          <p style="margin-top:8px;">🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h · 📱 WhatsApp Business disponible</p>
+        </div>
+        <div class="cgu-cta-row">
+          <a href="index.html#join" class="btn btn-primary">Devenir Membre CGI</a>
+          <a href="cgi-confidentialite.html" class="btn btn-outline">Politique de Confidentialité</a>
+          <a href="faq.html" class="btn btn-outline">Consulter la FAQ</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /data-lang="fr" -->
+
+<!-- ==============================
+     VERSION ANGLAISE
+     ============================== -->
+<div data-lang="en">
+
+  <!-- HERO EN -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Terms of Use</span>
+      </nav>
+      <div class="page-eyebrow">Legal Framework</div>
+      <h1 class="page-title">Terms and Conditions<br>of Use</h1>
+      <p class="page-subtitle">By accessing CGI's website and using its financial services, you unconditionally accept these Terms and Conditions of Use.</p>
+      <div class="page-hero-badge">📋 Effective: June 2026 · Version 1.0</div>
+    </div>
+  </div>
+
+  <!-- CONTENU CGU EN -->
+  <section class="page-body" aria-label="Terms and Conditions of Use - English version">
+    <div class="container">
+
+      <p class="cgu-version-note">Last updated: June 2026 · Binding on all users of cgi-mfi.com</p>
+
+      <div class="highlight-box" role="note">
+        <p><strong>Important:</strong> This document governs the use of CGI's website and the subscription to its microfinance services. Please read it carefully before any use or subscription.</p>
+      </div>
+
+      <!-- TABLE OF CONTENTS -->
+      <nav class="cgu-toc" aria-label="Terms of Use navigation">
+        <div class="cgu-toc-title">Contents</div>
+        <a href="#cgu-en-publisher">1. Publisher</a>
+        <a href="#cgu-en-access">2. Access Conditions</a>
+        <a href="#cgu-en-credit">3. Credit Services</a>
+        <a href="#cgu-en-savings">4. Savings Services</a>
+        <a href="#cgu-en-ip">5. Intellectual Property</a>
+        <a href="#cgu-en-liability">6. Liability</a>
+        <a href="#cgu-en-data">7. Personal Data</a>
+        <a href="#cgu-en-law">8. Applicable Law</a>
+        <a href="#cgu-en-updates">9. Amendments</a>
+        <a href="#cgu-en-contact">10. Contact</a>
+      </nav>
+
+      <div class="content-section" id="cgu-en-publisher">
+        <h2>1. Publisher</h2>
+        <p><strong>cgi-mfi.com</strong> is published by <strong>Community Growth Initiative (CGI)</strong>, a 1st category savings and credit cooperative (COOPEC), headquartered in Yaoundé, Cameroon. COBAC approval pending.</p>
+        <div class="info-box">
+          <h4>✉ wh@cgi-mfi.com</h4>
+          <p>Community Growth Initiative · Yaoundé, Cameroon · 📞 +237 693 53 95 86 · Mon–Fri: 7:30am–6pm · Sat: 8am–2pm</p>
+        </div>
+      </div>
+
+      <div class="content-section" id="cgu-en-access">
+        <h2>2. Service Access Conditions</h2>
+        <p>Access to CGI services is reserved for persons meeting all of the following conditions:</p>
+        <ul>
+          <li>Be at least 18 years old</li>
+          <li>Be a Cameroonian resident or national in good standing</li>
+          <li>Provide accurate, complete and up-to-date information at registration</li>
+          <li>Not use the services for illegal or immoral purposes</li>
+          <li>Unconditionally accept these Terms and the <a href="cgi-confidentialite.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-en-credit">
+        <h2>3. Credit Services - Specific Provisions</h2>
+
+        <h3>3.1 Application Review</h3>
+        <ul>
+          <li>All applications are reviewed in accordance with CGI's credit policy</li>
+          <li>CGI reserves the right to refuse any application without having to justify its decision</li>
+          <li>The applicable rate is that in force on the contract signing date</li>
+          <li>The complete file (KYC documents, proof of activity) must be provided before any decision</li>
+        </ul>
+
+        <h3>3.2 Repayment</h3>
+        <ul>
+          <li>Late repayments incur penalties as per the signed credit agreement</li>
+          <li>In the event of persistent default, CGI may resort to legal recovery proceedings</li>
+          <li>Early repayment is possible with no additional penalty</li>
+          <li>Instalments are due on the dates set out in the contractual schedule</li>
+        </ul>
+
+        <h3>3.3 Global Effective Rate (APR)</h3>
+        <p>The Global Effective Rate is disclosed before any signature, calculated in accordance with CEMAC consumer credit regulations. It includes the nominal interest rate, file fees and all mandatory charges. No hidden fees may be charged after the contract is signed.</p>
+      </div>
+
+      <div class="content-section" id="cgu-en-savings">
+        <h2>4. Savings Services</h2>
+        <ul>
+          <li>Interest rates on blocked savings products are guaranteed at signature</li>
+          <li>Early withdrawals on blocked accounts incur contractual penalties</li>
+          <li>The minimum opening deposit is defined in the current fee schedule</li>
+          <li>CGI is committed to maintaining prudential ratios in line with COBAC requirements</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-en-ip">
+        <h2>5. Intellectual Property</h2>
+        <p>All content on cgi-mfi.com (texts, images, logos, graphics, trademarks, typography) is protected by applicable intellectual property law. Any reproduction without prior written authorisation from CGI is strictly prohibited.</p>
+      </div>
+
+      <div class="content-section" id="cgu-en-liability">
+        <h2>6. Limitation of Liability</h2>
+        <ul>
+          <li>CGI does not guarantee permanent and uninterrupted access to the website</li>
+          <li>Website information is purely informational and does not constitute personalised financial advice</li>
+          <li>CGI declines all liability for fraudulent use of credentials due to user negligence</li>
+          <li>CGI shall not be liable for indirect damages resulting from use of the website</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="cgu-en-data">
+        <h2>7. Personal Data</h2>
+        <p>The processing of users' personal data is governed by the <a href="cgi-confidentialite.html">CGI Privacy Policy</a>, a separate document available on this site. CGI is committed to complying with applicable Cameroonian personal data protection regulations.</p>
+      </div>
+
+      <div class="content-section" id="cgu-en-law">
+        <h2>8. Applicable Law and Disputes</h2>
+        <p>These Terms are governed by Cameroonian law. Disputes shall be submitted to the competent courts of Yaoundé following a mandatory attempt at amicable resolution of at least 30 days.</p>
+        <p>For regulated financial disputes, COBAC jurisdiction may be invoked in accordance with applicable CEMAC regulations governing microfinance institutions.</p>
+      </div>
+
+      <div class="content-section" id="cgu-en-updates">
+        <h2>9. Amendments</h2>
+        <p>CGI reserves the right to modify these Terms at any time. Changes take effect upon publication on the website. Continued use of the services after modification constitutes acceptance of the new terms. The current version is always available on this page.</p>
+      </div>
+
+      <div class="content-section" id="cgu-en-contact">
+        <h2>10. Contact</h2>
+        <div class="info-box">
+          <h4>📋 CGI - Legal &amp; Compliance</h4>
+          <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a> · Community Growth Initiative · Yaoundé, Cameroon · +237 693 53 95 86</p>
+          <p style="margin-top:8px;">🕐 Mon–Fri: 7:30am–6pm · Sat: 8am–2pm · 📱 WhatsApp Business available</p>
+        </div>
+        <div class="cgu-cta-row">
+          <a href="index.html#join" class="btn btn-primary">Become a Member</a>
+          <a href="cgi-confidentialite.html" class="btn btn-outline">Privacy Policy</a>
+          <a href="faq.html" class="btn btn-outline">View FAQ</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /data-lang="en" -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="brand">Community Growth Initiative</div>
+      <div class="tagline">empower differently</div>
+      <p>Microfinance inclusive de 1ère catégorie - Agrément COBAC en cours. Nous finançons les rêves des entrepreneurs du Cameroun avec transparence, rapidité et ancrage local.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer">F</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
+        <a href="#" class="social-btn" aria-label="YouTube CGI MFI" target="_blank" rel="noopener noreferrer">Y</a>
+        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Nos Produits</h4>
+      <a href="index.html#products">MICRO-CRÉDIT</a>
+      <a href="index.html#products">CGI DJANGUI+</a>
+      <a href="index.html#products">CGI BUILD</a>
+      <a href="index.html#products">Crédit Solidaire</a>
+      <a href="index.html#products">Crédit Agricole</a>
+      <a href="simulateur-credit.html">Simulateur de Crédit</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <a href="index.html#about">Qui sommes-nous</a>
+      <a href="index.html#rse">Impact &amp; RSE</a>
+      <a href="index.html#investors">Investisseurs</a>
+      <a href="index.html#join">Devenir Membre</a>
+      <a href="cgi-foundation.html">CGI Foundation</a>
+      <a href="agenda.html">Agenda 2026</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Nos Agences</h4>
+      <p>🏛 Siège : Yaoundé, Marché Mokolo</p>
+      <p>📍 Bafoussam, Tamdja - face PMUC</p>
+      <h4 style="margin-top:16px;">Contact</h4>
+      <p>📞 <a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+      <p>📱 WhatsApp Business disponible</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Community Growth Initiative (CGI) - Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="cgi-confidentialite.html">Mentions Légales</a>
+      <a href="cgi-confidentialite.html">Confidentialité</a>
+      <a href="cgi-cgu.html" aria-current="page">CGU</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="index.html#join" class="float-btn">Devenir Membre CGI</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" role="search" aria-label="Rechercher dans CGI">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Rechercher dans CGI…"
+             oninput="updateSearch(this.value)" autocomplete="off" aria-label="Terme de recherche">
+      <button class="search-close" onclick="closeSearch()" aria-label="Fermer la recherche">✕</button>
+    </div>
+    <div id="searchSuggs" class="search-suggs" role="listbox" aria-label="Suggestions de recherche"></div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="document.getElementById('successModal').classList.remove('open')" aria-label="Fermer">✕</button>
+    <div class="success-icon" aria-hidden="true">🎉</div>
+    <h3 id="modalTitle">Merci pour votre intérêt !</h3>
+    <p id="modalMsg">Notre équipe vous contactera dans les 24 heures ouvrables.</p>
+    <button class="btn btn-primary btn-full" onclick="document.getElementById('successModal').classList.remove('open')">Fermer</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/global.js" defer></script>
+<script src="js/cgi-cgu.js" defer></script>
+</body>
+</html>

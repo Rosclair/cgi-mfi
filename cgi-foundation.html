@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CGI Foundation - Bras philanthropique de CGI dédié à l'autonomisation économique des femmes et jeunes d'Afrique Centrale. Formation, financement, soutien communautaire.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="CGI Foundation - Impact Social &amp; Développement">
+  <meta property="og:description" content="CGI Foundation : autonomisation des femmes et jeunes entrepreneurs d'Afrique Centrale. 4 programmes, 5 ODD alignés, 60% de femmes bénéficiaires.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cgi-mfi.com/cgi-foundation.html">
+  <meta property="og:image" content="#">
+  <meta property="og:locale" content="fr_CM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="#">
+  <meta name="twitter:image" content="#">
+  <link rel="canonical" href="https://www.cgi-mfi.com/cgi-foundation.html">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>CGI Foundation - Impact Social | Community Growth Initiative</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/cgi-foundation.css">
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION -->
+<div id="loadingBar" aria-hidden="true"></div>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="region" aria-label="Actualités en cours">
+  <div class="ticker-inner">
+    <div class="ticker-label">📢 FOUNDATION</div>
+    <div class="ticker-scroll">
+      <div class="ticker-track">
+        <span class="ticker-item">CGI Foundation - Autonomisation économique des femmes et jeunes d'Afrique Centrale</span>
+        <span class="ticker-item">CGI Femmes Leaders - Programme d'accompagnement 6 mois · Financement d'amorçage</span>
+        <span class="ticker-item">CGI Jeunes Entrepreneurs - Ateliers gratuits · Mentoring · Accès préférentiel au crédit</span>
+        <span class="ticker-item">CGI Champs Vivants - Soutien aux petits producteurs agricoles · Crédit saisonnier</span>
+        <span class="ticker-item">CGI École de l'Argent - Éducation financière communautaire gratuite</span>
+        <span class="ticker-item">5 ODD alignés · 60% de femmes · 40% de jeunes 18–35 ans · Lancement 2027</span>
+        <span class="ticker-item">CGI Foundation - Autonomisation économique des femmes et jeunes d'Afrique Centrale</span>
+        <span class="ticker-item">CGI Femmes Leaders - Programme d'accompagnement 6 mois · Financement d'amorçage</span>
+        <span class="ticker-item">CGI Jeunes Entrepreneurs - Ateliers gratuits · Mentoring · Accès préférentiel au crédit</span>
+        <span class="ticker-item">CGI Champs Vivants - Soutien aux petits producteurs agricoles · Crédit saisonnier</span>
+        <span class="ticker-item">CGI École de l'Argent - Éducation financière communautaire gratuite</span>
+        <span class="ticker-item">5 ODD alignés · 60% de femmes · 40% de jeunes 18–35 ans · Lancement 2027</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar" role="complementary" aria-label="Informations de contact">
+  <div class="top-bar-left">
+    <span>🏛 Siège social : Yaoundé - Cameroun</span>
+    <a href="tel:+237693539586">📞 +237 693 53 95 86</a>
+    <a href="mailto:wh@cgi-mfi.com">✉ wh@cgi-mfi.com</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html">Accueil</a>
+    <a href="cgi-foundation.html" aria-current="page">CGI Foundation</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="simulateur-credit.html">Simulateur de Crédit</a>
+    <div class="top-lang" role="navigation" aria-label="Sélection de langue">
+      <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
+      <button onclick="switchLang('en', this)" aria-label="English">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="mainNav" aria-label="Navigation principale">
+  <div class="navbar-inner">
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
+      <a href="index.html#join" class="btn btn-outline">Devenir Membre</a>
+      <a href="index.html#investors" class="btn btn-primary">Investir</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
+    <!-- Menu - centre -->
+    <ul class="nav-menu" id="nav-menu-id" role="menubar">
+      <li class="nav-item" role="none">
+        <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#about" class="nav-link active" role="menuitem" aria-haspopup="menu">
+          CGI-MFI
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#about" role="menuitem">Notre Mission</a>
+          <a href="index.html#about" role="menuitem">Vision 2031</a>
+          <a href="index.html#rse"   role="menuitem">Impact &amp; RSE</a>
+          <a href="index.html#about" role="menuitem">Gouvernance</a>
+          <a href="cgi-foundation.html" role="menuitem" aria-current="page">CGI Foundation</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#products" class="nav-link" role="menuitem" aria-haspopup="menu">
+          Produits
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#products" role="menuitem">MICRO-CRÉDIT</a>
+          <a href="index.html#products" role="menuitem">CGI DJANGUI+</a>
+          <a href="index.html#products" role="menuitem">CGI BUILD</a>
+          <a href="index.html#products" role="menuitem">Crédit Solidaire Groupe</a>
+          <a href="index.html#products" role="menuitem">Crédit Agricole</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#investors" class="nav-link" role="menuitem">Investisseurs</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="agenda.html" class="nav-link" role="menuitem">Agenda</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
+      </li>
+    </ul>
+
+    <!-- Logo - droite -->
+    <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
+      <div class="nav-logo-mark">
+        <img src="images/logo.png" alt="Logo CGI MFI" class="nav-logo-img"
+             width="120" height="40" decoding="async"
+             onerror="this.onerror=null; this.alt='CGI MFI';">
+      </div>
+      <div class="nav-logo-text">
+        <div class="brand">Community Growth</div>
+        <div class="tagline">empower differently</div>
+      </div>
+    </a>
+
+  </div>
+</nav>
+
+<noscript>
+  <div style="background:#c0392b;color:#fff;padding:16px;text-align:center;">
+    Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.
+  </div>
+</noscript>
+
+<!-- BARRE CHANGEMENT DE LANGUE -->
+<div class="lang-switch-bar">
+  <span class="lang-switch-label">Langue / Language :</span>
+  <button class="lang-btn active" data-lv="fr" onclick="switchPageLang('fr', this)" aria-label="Afficher en français">🇫🇷 Français</button>
+  <button class="lang-btn" data-lv="en" onclick="switchPageLang('en', this)" aria-label="Switch to English">🇬🇧 English</button>
+</div>
+
+<!-- ==============================
+     VERSION FRANÇAISE
+     ============================== -->
+<div data-lang="fr" class="show">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding-bottom:0;">
+    <div class="container" style="padding-bottom:48px;">
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">CGI Foundation</span>
+      </nav>
+      <div class="page-eyebrow">Impact Social &amp; Développement</div>
+      <h1 class="page-title">CGI<br>Foundation</h1>
+      <p class="page-subtitle">Le bras philanthropique de CGI, dédié à l'autonomisation économique des femmes et jeunes d'Afrique Centrale à travers la formation, le financement et le soutien communautaire.</p>
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">60%</div>
+          <div class="hero-kpi-label">de femmes parmi les bénéficiaires</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">5</div>
+          <div class="hero-kpi-label">ODD Nations Unies alignés</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">40%</div>
+          <div class="hero-kpi-label">de jeunes 18–35 ans</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">2027</div>
+          <div class="hero-kpi-label">Année de création</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANDE ODD -->
+  <div class="impact-strip" aria-label="Objectifs de Développement Durable">
+    <div class="container impact-strip-grid">
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">ODD<span class="impact-strip-gold"> 1</span></div>
+        <div class="impact-strip-label">Pas de pauvreté</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">ODD<span class="impact-strip-gold"> 5</span></div>
+        <div class="impact-strip-label">Égalité des sexes</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">ODD<span class="impact-strip-gold"> 8</span></div>
+        <div class="impact-strip-label">Travail décent &amp; croissance</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">ODD<span class="impact-strip-gold"> 10</span></div>
+        <div class="impact-strip-label">Réduction des inégalités</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <section class="page-body foundation-body">
+    <div class="container">
+
+      <div class="content-section">
+        <h2>Notre Mission Fondatrice</h2>
+        <p>La <strong>CGI Foundation</strong> est la branche non-lucrative de Community Growth Initiative. Là où CGI FINANCE offre des services financiers formels, la Foundation intervient auprès des populations les plus vulnérables - celles qui n'ont pas encore accès aux services financiers classiques.</p>
+        <p>Notre conviction : <em>l'accès à la formation précède l'accès au crédit</em>. La Foundation prépare les futures membres CGI, finance des bourses d'accompagnement entrepreneurial et co-finance des projets à impact social mesurable.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Nos 4 Programmes</h2>
+      </div>
+
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">👩‍💼</div>
+          <span class="prog-tag">Programme Phare</span>
+          <h3 class="prog-title">CGI FEMMES LEADERS</h3>
+          <p>Programme d'accompagnement 6 mois pour les femmes entrepreneures à faible revenu. Formation gestion, financement d'amorçage et mise en réseau.</p>
+          <ul>
+            <li>60% des bénéficiaires sont des femmes</li>
+            <li>Modules : gestion, marketing, plan d'affaires, pitching</li>
+            <li>Connexion directe avec CGI FINANCE pour l'accès au crédit</li>
+            <li>Réseau d'alumni actif et suivi post-programme</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">🎓</div>
+          <span class="prog-tag">Jeunesse &amp; Futur</span>
+          <h3 class="prog-title">CGI JEUNES ENTREPRENEURS</h3>
+          <p>Pour les 18–35 ans, étudiants, diplômés et primo-entrepreneurs. Le segment le plus dynamique et le plus exclu du financement classique.</p>
+          <ul>
+            <li>Ateliers mensuels d'éducation financière gratuits</li>
+            <li>Incubation légère de projets innovants</li>
+            <li>Mentoring par des entrepreneurs expérimentés</li>
+            <li>Accès préférentiel aux MICRO-CRÉDITS</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">🌾</div>
+          <span class="prog-tag">Agriculture &amp; Rural</span>
+          <h3 class="prog-title">CGI CHAMPS VIVANTS</h3>
+          <p>Soutien aux petits producteurs agricoles des zones rurales camerounaises.</p>
+          <ul>
+            <li>Formations en techniques agricoles durables</li>
+            <li>Accès groupé aux intrants et équipements</li>
+            <li>Crédit agricole saisonnier adapté aux récoltes</li>
+            <li>Connexion aux marchés locaux</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">📚</div>
+          <span class="prog-tag">Éducation Financière</span>
+          <h3 class="prog-title">CGI ÉCOLE DE L'ARGENT</h3>
+          <p>Éducation financière communautaire gratuite, membres ou non. Sessions dans les marchés, associations et établissements scolaires.</p>
+          <ul>
+            <li>Sessions mensuelles dans les marchés et quartiers</li>
+            <li>Modules : budget, épargne, crédit, Mobile Money</li>
+            <li>Supports en français et langues locales</li>
+            <li>Partenariat établissements scolaires</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Gouvernance &amp; Rapport d'Impact</h2>
+        <p>La CGI Foundation est gouvernée par un Conseil d'Administration indépendant. Elle publie un rapport d'impact annuel conforme aux standards GRI.</p>
+        <div class="info-box">
+          <h4>Rapport d'Impact 2027 - En préparation</h4>
+          <p>Premier rapport publié en décembre 2027, couvrant les SND30 ODD 1, 5, 8, 10, 17. Disponible en téléchargement libre.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Partenaires &amp; Donateurs</h2>
+        <p>La Foundation recherche activement partenaires philanthropiques et organisations à impact.</p>
+        <div class="partner-row">
+          <div class="partner-pill">PNUD Cameroun</div>
+          <div class="partner-pill">ONU Femmes</div>
+          <div class="partner-pill">Banque Mondiale</div>
+          <div class="partner-pill">AFD</div>
+          <div class="partner-pill">MINPROFF</div>
+          <div class="partner-pill">MINADER</div>
+        </div>
+        <p class="partner-note">* Partenariats en cours de négociation pour 2026–2027</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Nous Soutenir</h2>
+        <div class="info-box">
+          <h4>Pour faire un don ou devenir partenaire :</h4>
+          <p><strong>Email :</strong> wh@cgi-mfi.com · <strong>Tél :</strong> +237 693 53 95 86 · <strong>Adresse :</strong> CGI Foundation, Yaoundé, Cameroun</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /data-lang="fr" -->
+
+<!-- ==============================
+     VERSION ANGLAISE
+     ============================== -->
+<div data-lang="en">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding-bottom:0;">
+    <div class="container" style="padding-bottom:48px;">
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">CGI Foundation</span>
+      </nav>
+      <div class="page-eyebrow">Social Impact &amp; Development</div>
+      <h1 class="page-title">CGI<br>Foundation</h1>
+      <p class="page-subtitle">The philanthropic arm of CGI - dedicated to the economic empowerment of women and youth in Central Africa through training, finance access and community support.</p>
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">60%</div>
+          <div class="hero-kpi-label">of beneficiaries are women</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">5</div>
+          <div class="hero-kpi-label">UN SDGs aligned</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">40%</div>
+          <div class="hero-kpi-label">youth entrepreneurs 18–35</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">2027</div>
+          <div class="hero-kpi-label">Year of creation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SDG STRIP -->
+  <div class="impact-strip" aria-label="Sustainable Development Goals">
+    <div class="container impact-strip-grid">
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">SDG<span class="impact-strip-gold"> 1</span></div>
+        <div class="impact-strip-label">No Poverty</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">SDG<span class="impact-strip-gold"> 5</span></div>
+        <div class="impact-strip-label">Gender Equality</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">SDG<span class="impact-strip-gold"> 8</span></div>
+        <div class="impact-strip-label">Decent Work &amp; Growth</div>
+      </div>
+      <div class="impact-strip-item">
+        <div class="impact-strip-num">SDG<span class="impact-strip-gold"> 10</span></div>
+        <div class="impact-strip-label">Reduced Inequalities</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <section class="page-body foundation-body">
+    <div class="container">
+
+      <div class="content-section">
+        <h2>Our Founding Mission</h2>
+        <p>The <strong>CGI Foundation</strong> is the non-profit arm of Community Growth Initiative. While CGI-MFI provides formal financial services, the Foundation serves the most vulnerable populations - those who don't yet have access to traditional financial services.</p>
+        <p>Our belief: <em>access to knowledge precedes access to credit</em>. The Foundation prepares future CGI members, funds entrepreneurial grants, and co-finances projects with measurable social impact.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Our 4 Programs</h2>
+      </div>
+
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">👩‍💼</div>
+          <span class="prog-tag">Flagship Program</span>
+          <h3 class="prog-title">CGI WOMEN LEADERS</h3>
+          <p>6-month support program for low-income women entrepreneurs. Business training, seed funding access and networking.</p>
+          <ul>
+            <li>60% of beneficiaries are women</li>
+            <li>Modules: management, marketing, business plan, pitching</li>
+            <li>Direct connection with CGI FINANCE for credit access</li>
+            <li>Active alumni network and post-program follow-up</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">🎓</div>
+          <span class="prog-tag">Youth &amp; Future</span>
+          <h3 class="prog-title">CGI YOUNG ENTREPRENEURS</h3>
+          <p>For 18–35 year-olds - students, graduates and first-time entrepreneurs. Monthly workshops, mentoring and preferential credit access.</p>
+          <ul>
+            <li>Free monthly financial education workshops</li>
+            <li>Light incubation for innovative projects</li>
+            <li>Mentoring by experienced entrepreneurs</li>
+            <li>Preferential access to MICRO-CREDITS</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">🌾</div>
+          <span class="prog-tag">Agriculture &amp; Rural</span>
+          <h3 class="prog-title">CGI LIVING FIELDS</h3>
+          <p>Support for small farmers in Cameroon's rural areas.</p>
+          <ul>
+            <li>Sustainable farming technique training</li>
+            <li>Group access to inputs and equipment</li>
+            <li>Seasonal agricultural credit adapted to harvests</li>
+            <li>Connection to local markets</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon" aria-hidden="true">📚</div>
+          <span class="prog-tag">Financial Education</span>
+          <h3 class="prog-title">CGI MONEY SCHOOL</h3>
+          <p>Free community financial education for everyone - members and non-members alike.</p>
+          <ul>
+            <li>Monthly sessions in markets and neighborhoods</li>
+            <li>Modules: budgeting, savings, credit, Mobile Money</li>
+            <li>Materials in French and local languages</li>
+            <li>School partnerships</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Governance &amp; Impact Report</h2>
+        <p>The CGI Foundation is governed by an independent Board of Directors. It publishes an annual impact report in line with GRI standards.</p>
+        <div class="info-box">
+          <h4>2027 Impact Report - In Preparation</h4>
+          <p>First report published in December 2027, covering SND30 SDGs 1, 5, 8, 10, 17. Available for free download.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Partners &amp; Donors</h2>
+        <p>The Foundation actively seeks philanthropic partners and impact organizations.</p>
+        <div class="partner-row">
+          <div class="partner-pill">UNDP Cameroon</div>
+          <div class="partner-pill">UN Women</div>
+          <div class="partner-pill">World Bank</div>
+          <div class="partner-pill">AFD</div>
+          <div class="partner-pill">MINPROFF</div>
+          <div class="partner-pill">MINADER</div>
+        </div>
+        <p class="partner-note">* Partnerships currently under negotiation for 2026–2027</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Support the CGI Foundation</h2>
+        <div class="info-box">
+          <h4>To donate or become a partner:</h4>
+          <p><strong>Email:</strong> wh@cgi-mfi.com · <strong>Phone:</strong> +237 693 53 95 86 · <strong>Address:</strong> CGI Foundation, Yaoundé, Cameroon</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /data-lang="en" -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="brand">Community Growth Initiative</div>
+      <div class="tagline">empower differently</div>
+      <p>Microfinance inclusive de 1ère catégorie - Agrément COBAC en cours. Nous finançons les rêves des entrepreneurs du Cameroun avec transparence, rapidité et ancrage local.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer">F</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
+        <a href="#" class="social-btn" aria-label="YouTube CGI MFI" target="_blank" rel="noopener noreferrer">Y</a>
+        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Nos Produits</h4>
+      <a href="index.html#products">MICRO-CRÉDIT</a>
+      <a href="index.html#products">CGI DJANGUI+</a>
+      <a href="index.html#products">CGI BUILD</a>
+      <a href="index.html#products">Crédit Solidaire</a>
+      <a href="index.html#products">Crédit Agricole</a>
+      <a href="simulateur-credit.html">Simulateur de Crédit</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <a href="index.html#about">Qui sommes-nous</a>
+      <a href="index.html#rse">Impact &amp; RSE</a>
+      <a href="index.html#investors">Investisseurs</a>
+      <a href="cgi-foundation.html" aria-current="page">CGI Foundation</a>
+      <a href="agenda.html">Agenda 2026</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Nos Agences</h4>
+      <p>🏛 Siège : Yaoundé, Marché Mokolo</p>
+      <p>📍 Bafoussam, Tamdja - face PMUC</p>
+      <h4 style="margin-top:16px;">Contact Foundation</h4>
+      <p>📞 <a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Community Growth Initiative (CGI) - Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="cgi-confidentialite.html">Mentions Légales</a>
+      <a href="cgi-confidentialite.html">Confidentialité</a>
+      <a href="cgi-cgu.html">CGU</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="index.html#join" class="float-btn">Devenir Membre CGI</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" role="search" aria-label="Rechercher dans CGI">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Rechercher dans CGI…"
+             oninput="updateSearch(this.value)" autocomplete="off" aria-label="Terme de recherche">
+      <button class="search-close" onclick="closeSearch()" aria-label="Fermer la recherche">✕</button>
+    </div>
+    <div id="searchSuggs" class="search-suggs" role="listbox" aria-label="Suggestions de recherche"></div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="document.getElementById('successModal').classList.remove('open')" aria-label="Fermer">✕</button>
+    <div class="success-icon" aria-hidden="true">🎉</div>
+    <h3 id="modalTitle">Merci pour votre intérêt !</h3>
+    <p id="modalMsg">Notre équipe vous contactera dans les 24 heures ouvrables.</p>
+    <button class="btn btn-primary btn-full" onclick="document.getElementById('successModal').classList.remove('open')">Fermer</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/global.js" defer></script>
+<script src="js/cgi-foundation.js" defer></script>
+</body>
+</html>

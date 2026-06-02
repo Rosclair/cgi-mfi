@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulateur de Crédit CGI - Calculez votre mensualité en temps réel. MICRO-CRÉDIT 2,5% taux dégressif. Zéro surprise. CGI Community Growth Initiative, JANVIER 2027, Cameroun.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Simulateur de Crédit - CGI Community Growth Initiative">
+  <meta property="og:description" content="Calculez votre mensualité, le total à rembourser et le tableau d'amortissement. MICRO-CRÉDIT 2,5%/mois dégressif. Zéro surprise. Lancement JANVIER 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cgi-mfi.com/simulateur-credit.html">
+  <meta property="og:image" content="#">
+  <meta property="og:locale" content="fr_CM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="#">
+  <meta name="twitter:image" content="#">
+  <link rel="canonical" href="https://www.cgi-mfi.com/simulateur-credit.html">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Simulateur de Crédit - CGI Community Growth Initiative</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/simulateur-credit.css">
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION -->
+<div id="loadingBar" aria-hidden="true"></div>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="region" aria-label="Actualités en cours">
+  <div class="ticker-inner">
+    <div class="ticker-label">📢 ACTUALITÉS</div>
+    <div class="ticker-scroll">
+      <div class="ticker-track">
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : crédit en 48h garanti · 2,5%/mois dégressif · dès 50 000 FCFA</span>
+        <span class="ticker-item">Simulateur en temps réel · Zéro surprise · Ce que vous voyez = ce que vous paierez</span>
+        <span class="ticker-item">Remboursement anticipé possible · Aucune pénalité · Taux sur capital restant dû</span>
+        <span class="ticker-item">CGI FINANCE · Lancement officiel JANVIER 2027 · Yaoundé</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée 8%/an · zéro frais caché · transparence totale</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs · Finance inclusive à impact · Cameroun</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : crédit en 48h garanti · 2,5%/mois dégressif · dès 50 000 FCFA</span>
+        <span class="ticker-item">Simulateur en temps réel · Zéro surprise · Ce que vous voyez = ce que vous paierez</span>
+        <span class="ticker-item">Remboursement anticipé possible · Aucune pénalité · Taux sur capital restant dû</span>
+        <span class="ticker-item">CGI FINANCE · Lancement officiel JANVIER 2027 · Yaoundé</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée 8%/an · zéro frais caché · transparence totale</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs · Finance inclusive à impact · Cameroun</span>
+      </div>
+    </div>
+    <button class="ticker-pause-btn" id="ticker-pause" aria-pressed="false"
+            onclick="(function(btn){const t=document.querySelector('.ticker-track');const p=btn.getAttribute('aria-pressed')==='true';t.style.animationPlayState=p?'running':'paused';btn.setAttribute('aria-pressed',p?'false':'true');btn.textContent=p?'⏸':'▶';})(this)"
+            aria-label="Mettre en pause le ticker">⏸</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar" role="complementary" aria-label="Informations de contact">
+  <div class="top-bar-left">
+    <span>🏛 Siège social : Yaoundé - Cameroun</span>
+    <a href="tel:+237693539586">📞 +237 693 53 95 86</a>
+    <a href="mailto:wh@cgi-mfi.com">✉ wh@cgi-mfi.com</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html">Accueil</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="simulateur-credit.html" aria-current="page">Simulateur de Crédit</a>
+    <div class="top-lang" role="navigation" aria-label="Sélection de langue">
+      <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
+      <button onclick="switchLang('en', this)" aria-label="English">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="mainNav" aria-label="Navigation principale">
+  <div class="navbar-inner">
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
+      <a href="index.html#join" class="btn btn-outline">Devenir Membre</a>
+      <a href="index.html#investors" class="btn btn-primary">Investir</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
+    <!-- Menu - centre -->
+    <ul class="nav-menu" id="nav-menu-id" role="menubar">
+      <li class="nav-item" role="none">
+        <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#about" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI-MFI
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#about" role="menuitem">Notre Mission</a>
+          <a href="index.html#about" role="menuitem">Vision 2031</a>
+          <a href="index.html#rse"   role="menuitem">Impact &amp; RSE</a>
+          <a href="index.html#about" role="menuitem">Gouvernance</a>
+          <a href="cgi-foundation.html" role="menuitem">CGI Foundation</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#products" class="nav-link" role="menuitem" aria-haspopup="menu">
+          Produits
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="index.html#products" role="menuitem">MICRO-CRÉDIT 2,5% - Crédit 48h</a>
+          <a href="index.html#products" role="menuitem">CGI DJANGUI+ - Tontine</a>
+          <a href="index.html#products" role="menuitem">CGI BUILD - Épargne 8%/an</a>
+          <a href="index.html#products" role="menuitem">Crédit Solidaire Groupe</a>
+          <a href="index.html#products" role="menuitem">Crédit Agricole</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#investors" class="nav-link" role="menuitem">Investisseurs</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="agenda.html" class="nav-link" role="menuitem">Agenda</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="simulateur-credit.html" class="nav-link nav-sim active" role="menuitem" aria-current="page">⚡ Simulateur</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="index.html#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
+      </li>
+    </ul>
+
+    <!-- Logo - droite -->
+    <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
+      <div class="nav-logo-mark">
+        <img src="images/logo.png" alt="Logo CGI MFI" class="nav-logo-img"
+             width="120" height="40" decoding="async"
+             onerror="this.onerror=null; this.alt='CGI MFI';">
+      </div>
+      <div class="nav-logo-text">
+        <div class="brand">Community Growth</div>
+        <div class="tagline">empower differently</div>
+      </div>
+    </a>
+
+  </div>
+</nav>
+
+<noscript>
+  <div style="background:#c0392b;color:#fff;padding:16px;text-align:center;">
+    Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.
+  </div>
+</noscript>
+
+<!-- ==================================================
+     HERO SIMULATEUR
+     ================================================== -->
+<section class="sim-hero" aria-label="Simulateur de crédit CGI">
+  <div class="sim-hero-inner">
+    <div class="sim-hero-badge">Outil de Transparence - MICRO-CRÉDIT 2,5%</div>
+    <h1 class="sim-hero-title">
+      Simulez votre crédit<br>avant de vous <span>engager</span>
+    </h1>
+    <p class="sim-hero-sub">
+      CGI vous montre exactement ce que vous allez payer avant signature.
+      MICRO-CRÉDIT 2,5%/mois sur capital restant dû - Zéro surprise au guichet.
+    </p>
+    <div class="sim-hero-trust">Ce que vous voyez = ce que vous paierez</div>
+  </div>
+</section>
+
+<!-- ==================================================
+     SIMULATEUR CENTRAL
+     ================================================== -->
+<section class="simulateur" id="simulateur" aria-label="Configurateur de crédit">
+  <div class="container">
+    <div class="sim-layout">
+
+      <!-- === FORMULAIRE === -->
+      <div class="sim-form-card">
+        <div class="sim-form-header">
+          <div class="sim-form-header-title">Configurer votre crédit</div>
+          <div class="sim-form-header-tag">⚡ Calcul instantané</div>
+        </div>
+        <div class="sim-form-body">
+
+          <!-- Produit sélectionné -->
+          <div class="sim-field">
+            <div class="sim-label">Produit CGI</div>
+            <div class="sim-produit-tag">
+              <span class="sim-produit-icon" aria-hidden="true">💼</span>
+              <div>
+                <div class="sim-produit-name">MICRO-CRÉDIT 2,5%</div>
+                <div class="sim-produit-rate">Taux dégressif 2,5% / mois sur capital restant dû</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Montant -->
+          <div class="sim-field">
+            <label class="sim-label" for="montantInput">
+              <span>Montant du crédit</span>
+              <span class="sim-label-value" id="montantDisplay" aria-live="polite">300 000 FCFA</span>
+            </label>
+            <div class="sim-montant-wrap">
+              <span class="sim-currency" aria-hidden="true">FCFA</span>
+              <input type="number" class="sim-input-num" id="montantInput"
+                     min="50000" max="2000000" step="10000" value="300000"
+                     aria-label="Montant du crédit en FCFA"
+                     oninput="syncFromInput()">
+            </div>
+            <input type="range" class="sim-range" id="montantRange"
+                   min="50000" max="2000000" step="10000" value="300000"
+                   aria-label="Curseur montant du crédit"
+                   oninput="syncFromRange()">
+            <div class="sim-range-labels" aria-hidden="true">
+              <span>50 000</span>
+              <span>500 000</span>
+              <span>1 000 000</span>
+              <span>2 000 000</span>
+            </div>
+          </div>
+
+          <!-- Durée -->
+          <div class="sim-field">
+            <div class="sim-label">
+              <span>Durée de remboursement</span>
+              <span class="sim-label-value" id="dureeDisplay" aria-live="polite">12 mois</span>
+            </div>
+            <div class="sim-dur-btns" role="group" aria-label="Durée de remboursement">
+              <button class="sim-dur-btn" onclick="setDuree(3)"  data-dur="3"  aria-pressed="false">3 mois</button>
+              <button class="sim-dur-btn" onclick="setDuree(6)"  data-dur="6"  aria-pressed="false">6 mois</button>
+              <button class="sim-dur-btn active" onclick="setDuree(12)" data-dur="12" aria-pressed="true">12 mois</button>
+              <button class="sim-dur-btn" onclick="setDuree(18)" data-dur="18" aria-pressed="false">18 mois</button>
+            </div>
+          </div>
+
+          <!-- Frais optionnels -->
+          <div class="sim-field">
+            <div class="sim-label">Frais optionnels</div>
+            <div class="sim-optionals">
+              <div class="sim-opt-field">
+                <label for="fraisDossier">Frais de dossier</label>
+                <div class="sim-opt-wrap">
+                  <input type="number" id="fraisDossier"
+                         min="0" max="10" step="0.1" value="1"
+                         aria-label="Frais de dossier en pourcentage"
+                         oninput="recalculate()">
+                  <span class="sim-opt-unit" aria-hidden="true">%</span>
+                </div>
+              </div>
+              <div class="sim-opt-field">
+                <label for="assurance">Assurance</label>
+                <div class="sim-opt-wrap">
+                  <input type="number" id="assurance"
+                         min="0" max="5" step="0.1" value="0"
+                         aria-label="Prime d'assurance en pourcentage"
+                         oninput="recalculate()">
+                  <span class="sim-opt-unit" aria-hidden="true">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /sim-form-body -->
+      </div><!-- /sim-form-card -->
+
+      <!-- === RÉSULTATS === -->
+      <div class="sim-results-card" role="region" aria-label="Résultats de la simulation" aria-live="polite">
+        <div class="sim-results-header">
+          <div class="sim-results-title">📊 Résultats en temps réel</div>
+          <div class="sim-update-dot">Mis à jour</div>
+        </div>
+        <div class="sim-results-body">
+
+          <!-- Mensualité grande -->
+          <div class="sim-monthly-hero">
+            <div class="sim-monthly-label">Mensualité estimée</div>
+            <div class="sim-monthly-val" id="mensualiteVal">-</div>
+            <div class="sim-monthly-unit">FCFA / mois</div>
+          </div>
+
+          <!-- Grille 6 indicateurs -->
+          <div class="sim-res-grid">
+            <div class="sim-res-item">
+              <div class="sim-res-label">Total à rembourser</div>
+              <div class="sim-res-val highlight" id="totalRembVal">-</div>
+            </div>
+            <div class="sim-res-item">
+              <div class="sim-res-label">Total intérêts</div>
+              <div class="sim-res-val" id="totalInteretVal">-</div>
+            </div>
+            <div class="sim-res-item">
+              <div class="sim-res-label">Capital emprunté</div>
+              <div class="sim-res-val" id="capitalVal">-</div>
+            </div>
+            <div class="sim-res-item">
+              <div class="sim-res-label">Durée</div>
+              <div class="sim-res-val" id="dureeVal">-</div>
+            </div>
+            <div class="sim-res-item">
+              <div class="sim-res-label">Frais de dossier</div>
+              <div class="sim-res-val" id="fraisDossierVal">-</div>
+            </div>
+            <div class="sim-res-item">
+              <div class="sim-res-label">Taux nominal annuel</div>
+              <div class="sim-res-val" id="tauxNominalVal">-</div>
+            </div>
+          </div>
+
+          <!-- Barre répartition -->
+          <div class="sim-breakdown">
+            <div class="sim-breakdown-title">Répartition du coût total</div>
+            <div class="sim-breakdown-bar" role="presentation">
+              <div class="sim-bar-capital"  id="barCapital"  style="width:70%"></div>
+              <div class="sim-bar-interest" id="barInterest" style="width:25%"></div>
+              <div class="sim-bar-fees"     id="barFees"     style="width:5%"></div>
+            </div>
+            <div class="sim-breakdown-legend" aria-label="Légende répartition">
+              <div class="sim-legend-item"><div class="sim-legend-dot" style="background:var(--dark)"  aria-hidden="true"></div>Capital</div>
+              <div class="sim-legend-item"><div class="sim-legend-dot" style="background:var(--red)"   aria-hidden="true"></div>Intérêts</div>
+              <div class="sim-legend-item"><div class="sim-legend-dot" style="background:var(--gold)"  aria-hidden="true"></div>Frais</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="sim-cta-block">
+            <a href="index.html#join" class="sim-cta-main">📋 Demander ce crédit</a>
+            <p class="sim-cta-note">Réponse garantie en 48h · Conditions définitives après étude de dossier</p>
+          </div>
+
+        </div><!-- /sim-results-body -->
+      </div><!-- /sim-results-card -->
+
+    </div><!-- /sim-layout -->
+  </div><!-- /container -->
+</section>
+
+<!-- ==================================================
+     TABLEAU D'AMORTISSEMENT
+     ================================================== -->
+<section class="amortissement" id="tableau" aria-label="Tableau d'amortissement mensuel">
+  <div class="container">
+    <div class="amort-header">
+      <div>
+        <div class="section-eyebrow">Transparence totale</div>
+        <h2 class="section-title" style="margin-bottom:8px;">Tableau d'Amortissement</h2>
+        <p style="font-size:14px;color:var(--gray-500);">Chaque centime expliqué - mois par mois</p>
+      </div>
+      <div class="amort-info-badge">
+        <span style="font-size:18px;" aria-hidden="true">⬇</span>
+        <div>
+          <div class="amort-info-badge-title">Intérêts dégressifs</div>
+          <div class="amort-info-badge-sub">Vous payez moins au fil du temps</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="amort-scroll">
+      <table id="amortTable" aria-label="Tableau d'amortissement du crédit">
+        <thead>
+          <tr>
+            <th scope="col">Mois</th>
+            <th scope="col">Capital restant dû</th>
+            <th scope="col">Intérêts</th>
+            <th scope="col">Capital remboursé</th>
+            <th scope="col">Mensualité</th>
+          </tr>
+        </thead>
+        <tbody id="amortBody">
+          <!-- Rempli dynamiquement par simulateur-credit.js -->
+        </tbody>
+        <tfoot>
+          <tr id="amortTotals">
+            <td><strong>TOTAL</strong></td>
+            <td>-</td>
+            <td class="interest-col" id="totalInteretFoot">-</td>
+            <td id="totalCapitalFoot">-</td>
+            <td id="totalMensualiteFoot">-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================
+     SECTION TRANSPARENCE
+     ================================================== -->
+<section class="transparence" id="transparence" aria-label="Engagement de transparence CGI">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-eyebrow" style="color:var(--gold);">Notre engagement</div>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:12px;">Zéro Surprise - Notre Promesse</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.6);max-width:600px;margin:0 auto;line-height:1.7;">
+        Chez CGI, transparence n'est pas un slogan. C'est un engagement contractuel.
+      </p>
+    </div>
+    <div class="trans-grid">
+
+      <div class="trans-card">
+        <div class="trans-icon" aria-hidden="true">📐</div>
+        <h3 class="trans-title">Taux Dégressif Expliqué</h3>
+        <p class="trans-desc">Contrairement à un taux fixe, votre intérêt est calculé chaque mois sur le capital qu'il vous reste réellement à rembourser. Plus vous remboursez, moins vous payez d'intérêts. C'est juste, c'est mathématiquement vérifiable.</p>
+        <span class="trans-highlight">✓ Formule : Intérêt du mois = Capital restant × 2,5%</span>
+      </div>
+
+      <div class="trans-card">
+        <div class="trans-icon" aria-hidden="true">🔓</div>
+        <h3 class="trans-title">Remboursement Anticipé</h3>
+        <p class="trans-desc">Vous pouvez rembourser votre crédit en avance, partiellement ou en totalité, à tout moment. Vous économisez automatiquement les intérêts restants. Aucune pénalité, aucun frais caché - c'est dans nos conditions générales.</p>
+        <span class="trans-highlight">✓ Pénalité anticipation : 0 FCFA</span>
+      </div>
+
+      <div class="trans-card">
+        <div class="trans-icon" aria-hidden="true">⚖️</div>
+        <h3 class="trans-title">Différence avec le Taux Fixe</h3>
+        <p class="trans-desc">Un taux fixe applique le même taux sur le montant initial pendant toute la durée. Résultat : vous payez des intérêts sur un capital déjà remboursé. Le taux dégressif CGI est toujours plus avantageux pour l'emprunteur.</p>
+        <span class="trans-highlight">✓ Économie estimée vs taux fixe : jusqu'à 15%</span>
+      </div>
+
+      <div class="trans-card">
+        <div class="trans-icon" aria-hidden="true">📄</div>
+        <h3 class="trans-title">Ce qui est Affiché = Ce que vous Paierez</h3>
+        <p class="trans-desc">Le simulateur utilise exactement les mêmes formules que nos contrats officiels. Ce tableau d'amortissement est le même document que vous signerez. Pas d'ajustements en agence, pas de surprise au déblocage.</p>
+        <span class="trans-highlight">✓ ✅ Engagement contractuel CGI</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================
+     SECTION CONVERSION
+     ================================================== -->
+<section class="conversion" id="demande" aria-label="Demande de crédit CGI">
+  <div class="conversion-inner">
+    <div class="conversion-trust">Ce que vous voyez = ce que vous paierez</div>
+    <h2 class="conversion-title">Prêt à concrétiser<br>votre projet ?</h2>
+    <p class="conversion-sub">Votre simulation est prête. Faites la demande officielle maintenant - réponse en 48h garantie.</p>
+    <div class="conversion-btns">
+      <a href="index.html#join" class="btn-white">📋 Demander ce crédit</a>
+      <a href="index.html#join" class="btn-outline-white">Devenir membre CGI</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================
+     FOOTER
+     ================================================== -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="brand">Community Growth Initiative</div>
+      <div class="tagline">empower differently</div>
+      <p>Microfinance inclusive de 1ère catégorie - Agrément COBAC en cours. Nous finançons les rêves des entrepreneurs du Cameroun avec transparence, rapidité et ancrage local.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer">F</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn CGI MFI" target="_blank" rel="noopener noreferrer">In</a>
+        <a href="#" class="social-btn" aria-label="YouTube CGI MFI" target="_blank" rel="noopener noreferrer">Y</a>
+        <a href="#" class="social-btn" aria-label="X / Twitter CGI MFI" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Nos Produits</h4>
+      <a href="index.html#products">MICRO-CRÉDIT 2,5% - Crédit 48h</a>
+      <a href="index.html#products">CGI DJANGUI+ - Tontine Digitale</a>
+      <a href="index.html#products">CGI BUILD - Épargne 8%/an</a>
+      <a href="index.html#products">Crédit Solidaire</a>
+      <a href="index.html#products">Crédit Agricole</a>
+      <a href="simulateur-credit.html">Simulateur de Crédit</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <a href="index.html#about">Qui sommes-nous</a>
+      <a href="index.html#rse">Impact &amp; RSE</a>
+      <a href="index.html#investors">Investisseurs</a>
+      <a href="index.html#join">Devenir Membre</a>
+      <a href="cgi-foundation.html">CGI Foundation</a>
+      <a href="agenda.html">Agenda 2026</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Nos Agences</h4>
+      <p>🏛 Siège : Yaoundé, Marché Mokolo</p>
+      <p>📍 Bafoussam, Tamdja - face PMUC</p>
+      <h4 style="margin-top:16px;">Contact</h4>
+      <p>📞 <a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p>✉ <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>🕐 Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Community Growth Initiative (CGI) - Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="cgi-confidentialite.html">Mentions Légales</a>
+      <a href="cgi-confidentialite.html">Confidentialité</a>
+      <a href="cgi-cgu.html">CGU</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </div>
+  <div class="footer-note">
+    ℹ️ Simulation indicative basée sur les conditions CGI en vigueur. Les résultats affichés sont calculés selon un amortissement dégressif réel (MICRO-CRÉDIT 2,5%/mois sur capital restant dû). Le contrat officiel fait foi.
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="index.html#join" class="float-btn">Devenir Membre CGI</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" role="search" aria-label="Recherche CGI">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Rechercher dans CGI…"
+             oninput="updateSearch(this.value)" aria-label="Terme de recherche">
+      <button class="search-close" onclick="closeSearch()" aria-label="Fermer la recherche">✕</button>
+    </div>
+    <div id="searchSuggs" class="search-suggs" role="listbox" aria-label="Suggestions"></div>
+  </div>
+</div>
+
+<!-- Scripts - global en premier, page ensuite -->
+<script src="js/global.js" defer></script>
+<script src="js/simulateur-credit.js" defer></script>
+</body>
+</html>

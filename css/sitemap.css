@@ -1,0 +1,66 @@
+/* ============================================================
+   SITEMAP.CSS - Styles spécifiques à la page Plan du Site
+   Community Growth Initiative | cgi-mfi.com
+   MOBILE FIRST - Refonte v2 juin 2026
+   ============================================================ */
+
+/* ===== CONTAINER ÉLARGI ===== */
+/* sitemap-grid 1 col (mobile) → 2 cols (640px) → 3 cols (1024px)
+   sont gérées dans global.css via .sitemap-grid */
+.sitemap-body .container { max-width: 1100px; }
+
+/* ===== INTRO HERO - méta indicateurs ===== */
+.sitemap-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.sitemap-hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+.sitemap-hero-meta-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== SECTION INTRO ===== */
+.sitemap-intro {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: clamp(14px, 3vw, 20px) clamp(16px, 3vw, 24px);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.sitemap-intro-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.sitemap-intro p {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== TABLETTE (900px+) ===== */
+@media (min-width: 900px) {
+  .sitemap-body .container { max-width: 100%; }
+  .sitemap-hero-meta { gap: 24px; }
+}
+
+/* ===== MOBILE COMPACT ===== */
+@media (max-width: 479px) {
+  .sitemap-intro { flex-direction: column; gap: 10px; padding: 14px; }
+}
