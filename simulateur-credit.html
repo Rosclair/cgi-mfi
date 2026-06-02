@@ -37,19 +37,20 @@
   <div class="ticker-inner">
     <div class="ticker-label">📢 ACTUALITÉS</div>
     <div class="ticker-scroll">
-      <div class="ticker-track">
-        <span class="ticker-item">MICRO-CRÉDIT 2,5% : crédit en 48h garanti · 2,5%/mois dégressif · dès 50 000 FCFA</span>
-        <span class="ticker-item">Simulateur en temps réel · Zéro surprise · Ce que vous voyez = ce que vous paierez</span>
-        <span class="ticker-item">Remboursement anticipé possible · Aucune pénalité · Taux sur capital restant dû</span>
-        <span class="ticker-item">CGI FINANCE · Lancement officiel JANVIER 2027 · Yaoundé</span>
-        <span class="ticker-item">CGI BUILD : épargne bloquée 8%/an · zéro frais caché · transparence totale</span>
-        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs · Finance inclusive à impact · Cameroun</span>
-        <span class="ticker-item">MICRO-CRÉDIT 2,5% : crédit en 48h garanti · 2,5%/mois dégressif · dès 50 000 FCFA</span>
-        <span class="ticker-item">Simulateur en temps réel · Zéro surprise · Ce que vous voyez = ce que vous paierez</span>
-        <span class="ticker-item">Remboursement anticipé possible · Aucune pénalité · Taux sur capital restant dû</span>
-        <span class="ticker-item">CGI FINANCE · Lancement officiel JANVIER 2027 · Yaoundé</span>
-        <span class="ticker-item">CGI BUILD : épargne bloquée 8%/an · zéro frais caché · transparence totale</span>
-        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs · Finance inclusive à impact · Cameroun</span>
+      <div class="ticker-track" id="tickerTrack">
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Extension à 2 agences - Finance inclusive à impact</span>
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
       </div>
     </div>
     <button class="ticker-pause-btn" id="ticker-pause" aria-pressed="false"
@@ -66,9 +67,7 @@
     <a href="mailto:wh@cgi-mfi.com">✉ wh@cgi-mfi.com</a>
   </div>
   <div class="top-bar-right">
-    <a href="index.html">Accueil</a>
-    <a href="agenda.html">Agenda</a>
-    <a href="simulateur-credit.html" aria-current="page">Simulateur de Crédit</a>
+    <a href="#join">Ouverture Compte</a>
     <div class="top-lang" role="navigation" aria-label="Sélection de langue">
       <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
       <button onclick="switchLang('en', this)" aria-label="English">EN</button>
@@ -76,15 +75,16 @@
   </div>
 </div>
 
-<!-- NAVBAR -->
+<!-- ==============================
+     NAVBAR : Actions ← | Menu centre | Logo →
+     ============================== -->
 <nav class="navbar" id="mainNav" aria-label="Navigation principale">
   <div class="navbar-inner">
 
     <!-- Actions - gauche -->
     <div class="nav-actions">
       <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
-      <a href="index.html#join" class="btn btn-outline">Devenir Membre</a>
-      <a href="index.html#investors" class="btn btn-primary">Investir</a>
+      <a href="#investors" class="btn btn-primary">Investir</a>
     </div>
 
     <!-- Hamburger -->
@@ -97,36 +97,32 @@
     <!-- Menu - centre -->
     <ul class="nav-menu" id="nav-menu-id" role="menubar">
       <li class="nav-item" role="none">
-        <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
-      </li>
-      <li class="nav-item" role="none">
-        <a href="index.html#about" class="nav-link" role="menuitem" aria-haspopup="menu">
-          CGI-MFI
+        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI-FINANCE
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
-          <a href="index.html#about" role="menuitem">Notre Mission</a>
-          <a href="index.html#about" role="menuitem">Vision 2031</a>
-          <a href="index.html#rse"   role="menuitem">Impact &amp; RSE</a>
-          <a href="index.html#about" role="menuitem">Gouvernance</a>
+          <a href="#about" role="menuitem">Qui sommes-nous ?</a>
+          <a href="#rse" role="menuitem">Impact &amp; RSE</a>
+          <a href="#about" role="menuitem">Leadership</a>
           <a href="cgi-foundation.html" role="menuitem">CGI Foundation</a>
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#products" class="nav-link" role="menuitem" aria-haspopup="menu">
-          Produits
+        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
+          Produits &amp; Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
-          <a href="index.html#products" role="menuitem">MICRO-CRÉDIT 2,5% - Crédit 48h</a>
-          <a href="index.html#products" role="menuitem">CGI DJANGUI+ - Tontine</a>
-          <a href="index.html#products" role="menuitem">CGI BUILD - Épargne 8%/an</a>
-          <a href="index.html#products" role="menuitem">Crédit Solidaire Groupe</a>
-          <a href="index.html#products" role="menuitem">Crédit Agricole</a>
+          <a href="#products" role="menuitem">MICRO-CRÉDIT 2,5%</a>
+          <a href="#products" role="menuitem">CGI DJANGUI+</a>
+          <a href="#products" role="menuitem">CGI BUILD</a>
+          <a href="#products" role="menuitem">Crédit Solidaire Groupe</a>
+          <a href="#products" role="menuitem">Crédit Agricole</a>
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#investors" class="nav-link" role="menuitem">Investisseurs</a>
+        <a href="#investors" class="nav-link" role="menuitem">Investisseurs</a>
       </li>
       <li class="nav-item" role="none">
         <a href="agenda.html" class="nav-link" role="menuitem">Agenda</a>
@@ -135,24 +131,20 @@
         <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
       </li>
       <li class="nav-item" role="none">
-        <a href="simulateur-credit.html" class="nav-link nav-sim active" role="menuitem" aria-current="page">⚡ Simulateur</a>
+        <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
+        <a href="#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
       </li>
     </ul>
 
     <!-- Logo - droite -->
     <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
-      <div class="nav-logo-mark">
-        <img src="images/logo.png" alt="Logo CGI MFI" class="nav-logo-img"
-             width="120" height="40" decoding="async"
-             onerror="this.onerror=null; this.alt='CGI MFI';">
-      </div>
-      <div class="nav-logo-text">
+      <img src="images/logo.png" alt="Logo CGI MFI" style="height: 40px; width:auto;">
+      <!--div class="nav-logo-text">
         <div class="brand">Community Growth</div>
         <div class="tagline">empower differently</div>
-      </div>
+      </div-->
     </a>
 
   </div>

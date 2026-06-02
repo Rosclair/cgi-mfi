@@ -37,24 +37,25 @@
   <div class="ticker-inner">
     <div class="ticker-label">📢 ACTUALITÉS</div>
     <div class="ticker-scroll">
-      <div class="ticker-track">
-        <span class="ticker-item">CGI FINANCE - Lancement officiel Janvier 2027 - Yaoundé</span>
-        <span class="ticker-item">Adhésion à partir de 4 900 FCFA - La microfinance la plus accessible du marché</span>
-        <span class="ticker-item">MICRO-CRÉDIT : réponse garantie en 48h - 2,5%/mois dégressif - dès 50 000 FCFA</span>
-        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres</span>
-        <span class="ticker-item">CGI BUILD : épargne bloquée jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+      <div class="ticker-track" id="tickerTrack">
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
         <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
-        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Finance inclusive à impact - Cameroun</span>
-        <!-- Doublon pour animation continue -->
-        <span class="ticker-item">CGI FINANCE - Lancement officiel Janvier 2027 - Yaoundé</span>
-        <span class="ticker-item">Adhésion à partir de 4 900 FCFA - La microfinance la plus accessible du marché</span>
-        <span class="ticker-item">MICRO-CRÉDIT : réponse garantie en 48h - 2,5%/mois dégressif - dès 50 000 FCFA</span>
-        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres</span>
-        <span class="ticker-item">CGI BUILD : épargne bloquée jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Extension à 2 agences - Finance inclusive à impact</span>
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
         <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
-        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Finance inclusive à impact - Cameroun</span>
       </div>
     </div>
+    <button class="ticker-pause-btn" id="ticker-pause" aria-pressed="false"
+            onclick="(function(btn){const t=document.querySelector('.ticker-track');const p=btn.getAttribute('aria-pressed')==='true';t.style.animationPlayState=p?'running':'paused';btn.setAttribute('aria-pressed',p?'false':'true');btn.textContent=p?'⏸':'▶';})(this)"
+            aria-label="Mettre en pause le ticker">⏸</button>
   </div>
 </div>
 
@@ -66,11 +67,7 @@
     <a href="mailto:wh@cgi-mfi.com">✉ wh@cgi-mfi.com</a>
   </div>
   <div class="top-bar-right">
-    <a href="index.html">Accueil</a>
-    <a href="index.html#join">Espace Membre</a>
-    <a href="simulateur-credit.html">Simulateur de Crédit</a>
-    <a href="agenda.html">Agenda</a>
-    <a href="faq.html">FAQ</a>
+    <a href="#join">Ouverture Compte</a>
     <div class="top-lang" role="navigation" aria-label="Sélection de langue">
       <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
       <button onclick="switchLang('en', this)" aria-label="English">EN</button>
@@ -78,15 +75,16 @@
   </div>
 </div>
 
-<!-- NAVBAR -->
+<!-- ==============================
+     NAVBAR : Actions ← | Menu centre | Logo →
+     ============================== -->
 <nav class="navbar" id="mainNav" aria-label="Navigation principale">
   <div class="navbar-inner">
 
     <!-- Actions - gauche -->
     <div class="nav-actions">
       <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">🔍</button>
-      <a href="index.html#join" class="btn btn-outline">Devenir Membre</a>
-      <a href="index.html#investors" class="btn btn-primary">Investir</a>
+      <a href="#investors" class="btn btn-primary">Investir</a>
     </div>
 
     <!-- Hamburger -->
@@ -99,36 +97,32 @@
     <!-- Menu - centre -->
     <ul class="nav-menu" id="nav-menu-id" role="menubar">
       <li class="nav-item" role="none">
-        <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
-      </li>
-      <li class="nav-item" role="none">
-        <a href="index.html#about" class="nav-link" role="menuitem" aria-haspopup="menu">
-          CGI-MFI
+        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI-FINANCE
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
-          <a href="index.html#about" role="menuitem">Notre Mission</a>
-          <a href="index.html#about" role="menuitem">Vision 2031</a>
-          <a href="index.html#rse"   role="menuitem">Impact &amp; RSE</a>
-          <a href="index.html#about" role="menuitem">Gouvernance</a>
+          <a href="#about" role="menuitem">Qui sommes-nous ?</a>
+          <a href="#rse" role="menuitem">Impact &amp; RSE</a>
+          <a href="#about" role="menuitem">Leadership</a>
           <a href="cgi-foundation.html" role="menuitem">CGI Foundation</a>
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#products" class="nav-link" role="menuitem" aria-haspopup="menu">
-          Produits
+        <a href="#" class="nav-link" role="menuitem" aria-haspopup="menu">
+          Produits &amp; Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown" role="menu">
-          <a href="index.html#products" role="menuitem">MICRO-CRÉDIT</a>
-          <a href="index.html#products" role="menuitem">CGI DJANGUI+</a>
-          <a href="index.html#products" role="menuitem">CGI BUILD</a>
-          <a href="index.html#products" role="menuitem">Crédit Solidaire Groupe</a>
-          <a href="index.html#products" role="menuitem">Crédit Agricole</a>
+          <a href="#products" role="menuitem">MICRO-CRÉDIT 2,5%</a>
+          <a href="#products" role="menuitem">CGI DJANGUI+</a>
+          <a href="#products" role="menuitem">CGI BUILD</a>
+          <a href="#products" role="menuitem">Crédit Solidaire Groupe</a>
+          <a href="#products" role="menuitem">Crédit Agricole</a>
         </div>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#investors" class="nav-link" role="menuitem">Investisseurs</a>
+        <a href="#investors" class="nav-link" role="menuitem">Investisseurs</a>
       </li>
       <li class="nav-item" role="none">
         <a href="agenda.html" class="nav-link" role="menuitem">Agenda</a>
@@ -140,21 +134,17 @@
         <a href="simulateur-credit.html" class="nav-link nav-sim" role="menuitem">⚡ Simulateur</a>
       </li>
       <li class="nav-item" role="none">
-        <a href="index.html#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
+        <a href="#join" class="nav-link nav-espace" role="menuitem">Espace Membre</a>
       </li>
     </ul>
 
     <!-- Logo - droite -->
     <a href="index.html" class="nav-logo" aria-label="Accueil CGI">
-      <div class="nav-logo-mark">
-        <img src="images/logo.png" alt="Logo CGI MFI" class="nav-logo-img"
-             width="120" height="40" decoding="async"
-             onerror="this.onerror=null; this.alt='CGI MFI';">
-      </div>
-      <div class="nav-logo-text">
+      <img src="images/logo.png" alt="Logo CGI MFI" style="height: 40px; width:auto;">
+      <!--div class="nav-logo-text">
         <div class="brand">Community Growth</div>
         <div class="tagline">empower differently</div>
-      </div>
+      </div-->
     </a>
 
   </div>
@@ -166,119 +156,112 @@
   </div>
 </noscript>
 
-<!-- ==============================
-     VERSION FRANÇAISE
-     ============================== -->
-<div data-lang="fr" class="show">
-
-  <!-- HERO -->
-  <div class="page-hero">
-    <div class="container">
-      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Plan du Site</span>
-      </nav>
-      <div class="page-eyebrow">Navigation</div>
-      <h1 class="page-title">Plan du Site</h1>
-      <p class="page-subtitle">Retrouvez rapidement toutes les pages et sections du site CGI - produits, services, investisseurs, agenda et informations légales.</p>
-      <div class="sitemap-hero-meta">
-        <div class="sitemap-hero-meta-item">
-          <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
-          6 rubriques
-        </div>
-        <div class="sitemap-hero-meta-item">
-          <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
-          Toutes les pages
-        </div>
-        <div class="sitemap-hero-meta-item">
-          <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
-          Mis à jour : Janvier 2027
-        </div>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="index.html">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Plan du Site</span>
+    </nav>
+    <div class="page-eyebrow">Navigation</div>
+    <h1 class="page-title">Plan du Site</h1>
+    <p class="page-subtitle">Retrouvez rapidement toutes les pages et sections du site CGI - produits, services, investisseurs, agenda et informations légales.</p>
+    <div class="sitemap-hero-meta">
+      <div class="sitemap-hero-meta-item">
+        <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
+        6 rubriques
+      </div>
+      <div class="sitemap-hero-meta-item">
+        <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
+        Toutes les pages
+      </div>
+      <div class="sitemap-hero-meta-item">
+        <span class="sitemap-hero-meta-dot" aria-hidden="true"></span>
+        Mis à jour : Janvier 2027
       </div>
     </div>
   </div>
+</div>
 
-  <!-- CONTENU -->
-  <section class="page-body sitemap-body" aria-label="Plan du site - Version française">
-    <div class="container">
+<!-- CONTENU -->
+<section class="page-body sitemap-body" aria-label="Plan du site - Version française">
+  <div class="container">
 
-      <div class="sitemap-intro" role="note">
-        <span class="sitemap-intro-icon" aria-hidden="true">🗺️</span>
-        <p>Ce plan du site recense l'ensemble des pages et sections disponibles sur cgi-mfi.com. Utilisez les liens ci-dessous pour accéder directement à la rubrique souhaitée.</p>
-      </div>
-
-      <div class="sitemap-grid">
-
-        <!-- Accueil & Institution -->
-        <div class="sitemap-col">
-          <h2>Accueil &amp; Institution</h2>
-          <a href="index.html">Page d'accueil</a>
-          <a href="index.html#about">Notre Mission</a>
-          <a href="index.html#about">Vision 2031</a>
-          <a href="index.html#about">Nos Valeurs</a>
-          <a href="index.html#about">Gouvernance</a>
-          <a href="index.html#rse">Impact &amp; RSE</a>
-          <a href="cgi-foundation.html">CGI Foundation</a>
-        </div>
-
-        <!-- Nos Produits -->
-        <div class="sitemap-col">
-          <h2>Nos Produits</h2>
-          <a href="index.html#products">MICRO-CRÉDIT - Crédit 48h</a>
-          <a href="index.html#products">CGI DJANGUI+ - Tontine Digitale</a>
-          <a href="index.html#products">CGI BUILD - Épargne 8%/an</a>
-          <a href="index.html#products">Crédit Solidaire Groupe</a>
-          <a href="index.html#products">Crédit Agricole</a>
-          <a href="index.html#products">Mobile Money</a>
-          <a href="index.html#products">Formation Entrepreneuriale</a>
-          <a href="index.html#products">Micro-Assurance</a>
-        </div>
-
-        <!-- Outils & Services -->
-        <div class="sitemap-col">
-          <h2>Outils &amp; Services</h2>
-          <a href="simulateur-credit.html">Simulateur de Crédit</a>
-          <a href="index.html#espace">Espace Membre</a>
-          <a href="agenda.html">Agenda &amp; Événements</a>
-          <a href="faq.html">Questions Fréquentes</a>
-          <a href="index.html#community">Notre Communauté</a>
-          <a href="index.html#testimonials">Témoignages</a>
-        </div>
-
-        <!-- Investisseurs -->
-        <div class="sitemap-col">
-          <h2>Investisseurs</h2>
-          <a href="index.html#investors">Présentation Investisseurs</a>
-          <a href="index.html#investors">Projections Financières</a>
-          <a href="index.html#investors">Impact ESG &amp; ODD</a>
-          <a href="index.html#investors">Dossier Agrément COBAC</a>
-          <a href="index.html#investors">TRI &amp; VAN</a>
-        </div>
-
-        <!-- Rejoindre CGI -->
-        <div class="sitemap-col">
-          <h2>Rejoindre CGI</h2>
-          <a href="index.html#join">Devenir Membre Fondateur</a>
-          <a href="index.html#join">Formulaire d'Inscription</a>
-          <a href="index.html#impact">Nos Chiffres Clés</a>
-        </div>
-
-        <!-- Informations Légales -->
-        <div class="sitemap-col">
-          <h2>Informations Légales</h2>
-          <a href="cgi-confidentialite.html">Politique de Confidentialité</a>
-          <a href="cgi-cgu.html">Conditions Générales d'Utilisation</a>
-          <a href="sitemap.html" aria-current="page">Plan du Site</a>
-          <a href="faq.html">FAQ</a>
-          <a href="cgi-foundation.html">CGI Foundation</a>
-        </div>
-
-      </div>
+    <div class="sitemap-intro" role="note">
+      <span class="sitemap-intro-icon" aria-hidden="true">🗺️</span>
+      <p>Ce plan du site recense l'ensemble des pages et sections disponibles sur cgi-mfi.com. Utilisez les liens ci-dessous pour accéder directement à la rubrique souhaitée.</p>
     </div>
-  </section>
 
-</div><!-- /data-lang="fr" -->
+    <div class="sitemap-grid">
+
+      <!-- Accueil & Institution -->
+      <div class="sitemap-col">
+        <h2>Accueil &amp; Institution</h2>
+        <a href="index.html">Page d'accueil</a>
+        <a href="index.html#about">Notre Mission</a>
+        <a href="index.html#about">Vision 2031</a>
+        <a href="index.html#about">Nos Valeurs</a>
+        <a href="index.html#about">Gouvernance</a>
+        <a href="index.html#rse">Impact &amp; RSE</a>
+        <a href="cgi-foundation.html">CGI Foundation</a>
+      </div>
+
+      <!-- Nos Produits -->
+      <div class="sitemap-col">
+        <h2>Nos Produits</h2>
+        <a href="index.html#products">MICRO-CRÉDIT - Crédit 48h</a>
+        <a href="index.html#products">CGI DJANGUI+ - Tontine Digitale</a>
+        <a href="index.html#products">CGI BUILD - Épargne 8%/an</a>
+        <a href="index.html#products">Crédit Solidaire Groupe</a>
+        <a href="index.html#products">Crédit Agricole</a>
+        <a href="index.html#products">Mobile Money</a>
+        <a href="index.html#products">Formation Entrepreneuriale</a>
+        <a href="index.html#products">Micro-Assurance</a>
+      </div>
+
+      <!-- Outils & Services -->
+      <div class="sitemap-col">
+        <h2>Outils &amp; Services</h2>
+        <a href="simulateur-credit.html">Simulateur de Crédit</a>
+        <a href="index.html#espace">Espace Membre</a>
+        <a href="agenda.html">Agenda &amp; Événements</a>
+        <a href="faq.html">Questions Fréquentes</a>
+        <a href="index.html#community">Notre Communauté</a>
+        <a href="index.html#testimonials">Témoignages</a>
+      </div>
+
+      <!-- Investisseurs -->
+      <div class="sitemap-col">
+        <h2>Investisseurs</h2>
+        <a href="index.html#investors">Présentation Investisseurs</a>
+        <a href="index.html#investors">Projections Financières</a>
+        <a href="index.html#investors">Impact ESG &amp; ODD</a>
+        <a href="index.html#investors">Dossier Agrément COBAC</a>
+        <a href="index.html#investors">TRI &amp; VAN</a>
+      </div>
+
+      <!-- Rejoindre CGI -->
+      <div class="sitemap-col">
+        <h2>Rejoindre CGI</h2>
+        <a href="index.html#join">Devenir Membre Fondateur</a>
+        <a href="index.html#join">Formulaire d'Inscription</a>
+        <a href="index.html#impact">Nos Chiffres Clés</a>
+      </div>
+
+      <!-- Informations Légales -->
+      <div class="sitemap-col">
+        <h2>Informations Légales</h2>
+        <a href="cgi-confidentialite.html">Politique de Confidentialité</a>
+        <a href="cgi-cgu.html">Conditions Générales d'Utilisation</a>
+        <a href="sitemap.html" aria-current="page">Plan du Site</a>
+        <a href="faq.html">FAQ</a>
+        <a href="cgi-foundation.html">CGI Foundation</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
