@@ -18,15 +18,39 @@ function switchLang(lang, btn) {
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.getElementById('nav-menu-id');
+
+  function closeMenu() {
+    navMenu.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('is-open');
       hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+
+    // Liens sans sous-menu → ferme le menu
+    navMenu.querySelectorAll('.nav-link:not([aria-haspopup])').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Lien CGI (avec sous-menu) → ouvre/ferme le dropdown sur mobile
+    navMenu.querySelectorAll('.nav-link[aria-haspopup]').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+          e.preventDefault();
+          const dropdown = trigger.closest('.nav-item').querySelector('.nav-dropdown');
+          if (dropdown) dropdown.classList.toggle('mobile-open');
+        }
+      });
+    });
+
+    // Liens dans les dropdowns → ferme tout le menu
+    navMenu.querySelectorAll('.nav-dropdown a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        navMenu.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('mobile-open'));
+        closeMenu();
       });
     });
   }

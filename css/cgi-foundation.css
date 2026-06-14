@@ -41,7 +41,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 .impact-strip-item {
   text-align: center;
@@ -49,18 +49,31 @@
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .impact-strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+.impact-strip-grid--5 .impact-strip-item:last-child { border-right: none; border-bottom: none; }
+.impact-strip-grid--5 .impact-strip-item:nth-last-child(-n+1) { border-bottom: none; }
 .impact-strip-item:nth-last-child(-n+2) { border-bottom: none; }
 .impact-strip-num {
   font-family: var(--font-display);
-  font-size: clamp(28px, 6vw, 40px);
+  font-size: clamp(24px, 5vw, 36px);
   font-weight: 900;
   color: var(--white);
 }
 .impact-strip-gold { color: var(--gold); }
 .impact-strip-label {
   font-size: 12px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
   margin-top: 5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.impact-strip-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 8px;
+  line-height: 1.5;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===== GRILLE PROGRAMMES : 1 col mobile ===== */
@@ -129,6 +142,7 @@
 @media (min-width: 900px) {
   .hero-kpis { grid-template-columns: repeat(4, 1fr); }
   .impact-strip-grid { grid-template-columns: repeat(4, 1fr); }
+  .impact-strip-grid--5 { grid-template-columns: repeat(5, 1fr); }
   .impact-strip-item { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.1); }
   .impact-strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
   .impact-strip-item:last-child { border-right: none; }

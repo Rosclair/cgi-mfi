@@ -18,14 +18,46 @@
   opacity: 0;
   transition: opacity 0.8s ease;
   display: flex; align-items: center;
+  background-size: cover;
+  background-position: center;
 }
 .hero-slide.active { opacity: 1; z-index: 2; }
 .hero-pattern {
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(192,57,43,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 40%);
+    radial-gradient(circle at 20% 50%, rgba(192,57,43,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(192,57,43,0.10) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 30%);
   z-index: 1;
+  animation: heroPatternShift 12s ease-in-out infinite alternate;
+}
+@keyframes heroPatternShift {
+  0%   { background-image:
+    radial-gradient(circle at 20% 50%, rgba(192,57,43,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(192,57,43,0.10) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 30%);
+    transform: scale(1);
+  }
+  100% { background-image:
+    radial-gradient(circle at 35% 40%, rgba(192,57,43,0.22) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(201,168,76,0.16) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(192,57,43,0.12) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 30%);
+    transform: scale(1.06);
+  }
+}
+
+/* Grille décorative sur le hero */
+.hero-pattern::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.6;
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -149,6 +181,12 @@
   border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center;
   font-size: 60px; overflow: hidden; position: relative;
+}
+.handshake-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
 }
 .about-img-badge {
   position: absolute; bottom: 0; right: 0;
@@ -456,6 +494,122 @@
 .espace-badge { background: var(--red-light); border: 1px solid var(--red); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
 .espace-badge-text { font-size: 13px; color: var(--red-dark); font-weight: 600; line-height: 1.5; }
 
+/* ===== LEADERSHIP ===== */
+.leadership { padding: clamp(48px, 8vw, 96px) 0; background: var(--white); }
+.leadership-header { margin-bottom: clamp(32px, 5vw, 56px); }
+.leadership-mission {
+  font-size: clamp(14px, 2vw, 15px); color: var(--gray-500); line-height: 1.8;
+  font-style: italic;
+}
+
+/* Gov split layout */
+.gov-split { display: grid; gap: clamp(24px, 4vw, 48px); text-align: left; }
+.gov-title { text-align: left; }
+.gov-pillars { display: flex; gap: 10px; flex-wrap: wrap; }
+.gov-pillar {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); border: 1.5px solid var(--red);
+  border-radius: var(--radius); padding: 5px 12px;
+}
+.gov-pillar::before {
+  content: ''; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--red); flex-shrink: 0;
+}
+.leader-group-header--banner { border-left: 3px solid var(--red); padding-left: 20px; }
+
+/* Groupes (Administrateurs / Direction Générale / Comité) */
+.leader-group {
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+.leader-group-header { margin-bottom: 24px; }
+.leader-group-eyebrow {
+  font-size: 11px; font-weight: 700; color: var(--red);
+  letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.leader-group-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 3vw, 24px); font-weight: 700;
+  color: var(--dark); margin-bottom: 8px;
+}
+.leader-group-desc { font-size: 15px; color: var(--gray-500); line-height: 1.7; max-width: 680px; }
+
+/* Grille de profils — mobile : 2 cols par défaut */
+.leader-profiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 3vw, 24px); }
+.leader-profiles--dg { grid-template-columns: repeat(2, 1fr); max-width: 560px; }
+.leader-profiles--comite { grid-template-columns: repeat(2, 1fr); }
+
+/* Carte profil */
+.leader-profile {
+  display: flex; flex-direction: column;
+  transition: var(--transition);
+}
+.leader-profile:hover { transform: translateY(-4px); }
+
+/* Zone photo — rapport 3:4, prête pour une <img> */
+.leader-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, var(--dark) 0%, var(--red-deep) 100%);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.leader-photo--gold {
+  background: linear-gradient(160deg, var(--dark) 0%, #3a2a00 100%);
+}
+/* L'image réelle, quand elle sera ajoutée */
+.leader-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+}
+/* Initiales / placeholder visible avant l'image */
+.leader-photo-initials {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 4vw, 28px); font-weight: 900;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 2px;
+  user-select: none;
+  pointer-events: none;
+}
+/* Barre couleur en bas de la photo */
+.leader-photo::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--red);
+}
+.leader-photo--gold::after { background: var(--gold); }
+
+/* Corps de la carte */
+.leader-profile-body { display: flex; flex-direction: column; gap: 4px; }
+.leader-profile-badge {
+  display: inline-flex; align-items: center;
+  background: var(--gray-100); color: var(--gray-700);
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: var(--radius);
+  align-self: flex-start; margin-bottom: 4px;
+}
+.leader-profile-badge--primary {
+  background: var(--red); color: var(--white);
+}
+.leader-profile-badge--gold {
+  background: var(--dark); color: var(--gold);
+}
+.leader-profile-name {
+  font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.3;
+}
+.leader-profile-title {
+  font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.3;
+  margin-bottom: 4px;
+}
+.leader-profile-desc {
+  font-size: 12px; color: var(--gray-500); line-height: 1.6;
+}
+
 /* ===== COMMUNAUTÉ ===== */
 .community { padding: clamp(48px, 8vw, 96px) 0; background: var(--white); }
 .comm-eyebrow { font-size: 11px; font-weight: 700; color: var(--red); letter-spacing: 3px; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
@@ -628,6 +782,13 @@
   .rse-gov-grid { grid-template-columns: repeat(4, 1fr); }
   .rse-actions { grid-template-columns: repeat(2, 1fr); }
 
+  /* Leadership : split 2 cols tablette */
+  .gov-split { grid-template-columns: 1fr 1fr; align-items: start; }
+
+  /* Leadership : 3 cols tablette pour admins et comité */
+  .leader-profiles--admin { grid-template-columns: repeat(3, 1fr); }
+  .leader-profiles--comite { grid-template-columns: repeat(3, 1fr); }
+
   /* Communauté : 3 cols tablette */
   .comm-grid { grid-template-columns: repeat(3, 1fr); }
   .comm-card-img { height: 110px; }
@@ -667,6 +828,10 @@
 
   /* Espace : 2 cols */
   .espace-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+
+  /* Leadership desktop : 5 cols pour le comité */
+  .leader-profiles--comite { grid-template-columns: repeat(5, 1fr); }
+  .leader-profiles--admin { grid-template-columns: repeat(3, 1fr); max-width: 720px; }
 
   /* Communauté : 5 cols desktop */
   .comm-grid { grid-template-columns: repeat(5, 1fr); }

@@ -100,7 +100,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   gap: 40px;
   white-space: nowrap;
-  animation: ticker 40s linear infinite;
+  animation: ticker 18s linear infinite;
 }
 .ticker-track:hover { animation-play-state: paused; }
 .ticker-item {
@@ -166,23 +166,41 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-wrap: wrap;
 }
 
-/* Actions — ordre 1 (gauche) */
+/* Actions — entre le logo (droite) et le hamburger (gauche) sur mobile */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  order: 2;
+  gap: 6px;
+  order: 1;
+  margin-left: auto;
 }
 
 /* btn-outline dans nav-actions : caché sur mobile */
 .nav-actions .btn-outline { display: none; }
 
-/* Logo — ordre 2 (poussé à droite sur mobile) */
+/* Bouton recherche caché sur mobile */
+.nav-actions .btn-ghost { display: none; }
+
+/* Boutons compacts sur mobile */
+.nav-actions .btn {
+  font-size: 11px;
+  padding: 8px 10px;
+  min-height: 36px;
+  text-transform: uppercase;
+}
+.nav-actions .nav-link.nav-sim {
+  display: none;
+}
+
+/* Devenir Membre dans le menu mobile uniquement */
+.nav-item-membre { display: flex; }
+
+/* Logo — poussé après les boutons sur mobile */
 .nav-logo {
   display: flex;
   align-items: center;
-  order: 1;
-  margin-left: auto;
+  order: 2;
+  margin-left: 8px;
 }
 .nav-logo-mark {
   width: 40px; height: 40px;
@@ -325,6 +343,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-left-color: var(--red); padding-left: 28px;
 }
 .nav-item:hover .nav-dropdown { display: block; }
+.nav-dropdown.mobile-open { display: block; }
 
 /* ===== BUTTONS ===== */
 .btn {
@@ -479,7 +498,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius);
 }
 .modal-close-btn:hover { color: var(--dark); background: var(--gray-50); }
-.success-icon { font-size: 56px; margin-bottom: 16px; }
+.success-icon {
+  margin-bottom: 20px;
+  display: flex; justify-content: center; align-items: center;
+}
+.success-icon--ok { color: var(--green); }
+.success-icon--lock { color: var(--red); }
 
 /* ===== SEARCH OVERLAY ===== */
 .search-overlay {
@@ -501,7 +525,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 12px 16px;
   margin-bottom: 8px;
 }
-.search-input-wrap .search-icon { font-size: 20px; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+.search-input-wrap .search-icon {
+  font-size: 20px; color: rgba(255,255,255,0.4); flex-shrink: 0;
+  display: flex; align-items: center;
+}
 #searchInput {
   background: none; border: none;
   color: var(--white); font-size: clamp(16px, 3vw, 20px);
@@ -525,7 +552,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-height: 48px;
 }
 .search-sugg:hover { background: var(--gray-50); color: var(--red); }
-.search-sugg::before { content: '🔍'; font-size: 12px; }
+.search-sugg::before { content: '→'; font-size: 13px; color: var(--gray-300); }
 
 /* ===== FLOATING CTA ===== */
 .floating-cta {
@@ -805,6 +832,57 @@ footer { background: var(--black); color: rgba(255,255,255,0.6); }
   padding: 0; text-decoration: underline;
 }
 
+/* ===== ICONES LUCIDE ===== */
+.top-bar a,
+.top-bar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ticker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.top-bar svg,
+.ticker-label svg {
+  flex-shrink: 0;
+}
+/* Icônes SVG — pages secondaires */
+.page-hero-badge,
+.faq-contact-btn,
+.event-category,
+.sim-form-header-tag,
+.sim-results-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sim-cta-main,
+.btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.faq-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mini-cal-nav,
+.badge-emoji,
+.sitemap-intro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prog-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ===== TICKER PAUSE BUTTON ===== */
 .ticker-pause-btn {
   background: rgba(255,255,255,0.15);
@@ -862,9 +940,20 @@ footer { background: var(--black); color: rgba(255,255,255,0.6); }
   /* Hamburger masqué */
   .hamburger { display: none; }
 
-  /* Bouton outline visible dans nav-actions */
+  /* Bouton outline et recherche visibles sur desktop */
   .nav-actions .btn-outline { display: inline-flex; }
-  .nav-actions { margin-right: 28px; }
+  .nav-actions .btn-ghost { display: inline-flex; }
+  .nav-actions { margin-right: 28px; margin-left: 0; order: 3; }
+
+  /* Restaurer la taille normale des boutons sur desktop */
+  .nav-actions .btn { font-size: 13px; padding: 10px 18px; min-height: 44px; }
+  .nav-actions .nav-link.nav-sim { display: inline-flex; font-size: 13px; padding: 10px 16px; min-height: 44px; margin: auto 4px; }
+
+  /* Devenir Membre dans le menu mobile masqué sur desktop */
+  .nav-item-membre { display: none; }
+
+  /* Restaurer l'ordre du logo sur desktop */
+  .nav-logo { order: 1; margin-left: 0; }
 
   /* Menu horizontal */
   .nav-menu {
