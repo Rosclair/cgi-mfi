@@ -166,13 +166,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-wrap: wrap;
 }
 
-/* Actions — entre le logo (droite) et le hamburger (gauche) sur mobile */
+/* Actions — collées au hamburger (gauche) sur mobile */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 6px;
   order: 1;
-  margin-left: auto;
+  margin-left: 4px;
 }
 
 /* btn-outline dans nav-actions : caché sur mobile */
@@ -195,12 +195,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* Devenir Membre dans le menu mobile uniquement */
 .nav-item-membre { display: flex; }
 
-/* Logo — poussé après les boutons sur mobile */
+/* Logo — poussé à droite sur mobile */
 .nav-logo {
   display: flex;
   align-items: center;
   order: 2;
-  margin-left: 8px;
+  margin-left: auto;
 }
 .nav-logo-mark {
   width: 40px; height: 40px;
