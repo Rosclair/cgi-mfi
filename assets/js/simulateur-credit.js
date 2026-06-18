@@ -7,17 +7,17 @@
    ITEMS DE RECHERCHE - page simulateur
 =================================================== */
 window.searchItems = [
-  'Simulateur de crédit MICRO-CRÉDIT 2,5%',
+  'Simulateur de crédit MICRO-CRÉDIT 2%',
   'Calculer ma mensualité',
   'Tableau d\'amortissement dégressif',
-  'Taux dégressif 2,5% / mois sur capital restant dû',
+  'Taux dégressif 2% / mois sur capital restant dû',
   'Remboursement anticipé sans pénalité',
   'Total à rembourser',
   'Frais de dossier crédit CGI',
   'Taux nominal annuel',
   'Demander un crédit CGI',
   'Devenir membre CGI',
-  'MICRO-CRÉDIT 2,5% - crédit en 48h garanti',
+  'MICRO-CRÉDIT 2% - crédit en 48h garanti',
   'Transparence totale - zéro surprise'
 ];
 

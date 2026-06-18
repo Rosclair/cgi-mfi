@@ -8,7 +8,7 @@
 =================================================== */
 window.searchItems = [
   'Ouvrir un compte épargne CGI',
-  'MICRO-CRÉDIT 2,5% - Crédit en 48h',
+  'MICRO-CRÉDIT 2% - Crédit en 48h',
   'CGI DJANGUI+ - Tontine formalisée',
   'CGI BUILD - Épargne 8%/an',
   'Simulateur de crédit CGI',
