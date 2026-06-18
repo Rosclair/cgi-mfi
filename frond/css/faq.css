@@ -1,0 +1,204 @@
+/* ============================================================
+   FAQ.CSS - Styles spécifiques à la page FAQ
+   Community Growth Initiative | cgi-mfi.com
+   MOBILE FIRST - Refonte v2 juin 2026
+   ============================================================ */
+
+/* ===== HERO - MÉTA INDICATEURS ===== */
+.faq-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.faq-hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+.faq-hero-meta-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== PAGE BODY ===== */
+.faq-body { background: var(--gray-50); }
+.faq-body .container { max-width: 960px; }
+
+/* ===== LAYOUT : colonne unique sur mobile ===== */
+.faq-layout { display: block; }
+
+/* ===== NAVIGATION LATÉRALE — masquée mobile ===== */
+.faq-nav { display: none; }
+
+.faq-nav-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-300);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.faq-nav a {
+  display: block;
+  font-size: 12px;
+  color: var(--gray-500);
+  padding: 8px 0 8px 12px;
+  border-left: 2px solid var(--gray-100);
+  line-height: 1.4;
+  transition: var(--transition);
+  min-height: 36px;
+}
+.faq-nav a:hover,
+.faq-nav a.active {
+  color: var(--red);
+  border-left-color: var(--red);
+  padding-left: 16px;
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.faq-main section { scroll-margin-top: 96px; }
+
+/* ===== LISTES DANS LES RÉPONSES ===== */
+.faq-ol {
+  padding-left: 20px;
+  list-style: decimal;
+  margin: 10px 0;
+}
+.faq-ol li {
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--gray-700);
+  line-height: 1.65;
+  border-bottom: none;
+}
+.faq-ol li::before { display: none; }
+
+.faq-ul {
+  padding-left: 20px;
+  list-style: disc;
+  margin: 10px 0;
+}
+.faq-ul li {
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--gray-700);
+  line-height: 1.65;
+  border-bottom: none;
+}
+.faq-ul li::before { display: none; }
+
+/* Liste contact */
+.faq-contact-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.faq-contact-list li {
+  font-size: 14px;
+  color: var(--gray-700);
+  padding: 0; border-bottom: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.faq-contact-list li::before { display: none; }
+.faq-contact-list a { color: var(--red); font-weight: 600; transition: var(--transition); }
+.faq-contact-list a:hover { color: var(--red-dark); }
+
+/* Note de bas de réponse */
+.faq-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* ===== BLOC CTA DE CONTACT ===== */
+.faq-contact-cta {
+  margin-top: 40px;
+  background: var(--dark);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.faq-contact-cta-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 3vw, 20px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.faq-contact-cta-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+.faq-contact-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.faq-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 2px solid transparent;
+  min-height: 44px;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.faq-contact-btn-primary {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+.faq-contact-btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); }
+.faq-contact-btn-outline {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.25);
+}
+.faq-contact-btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.45); }
+
+/* ===== TABLETTE (768px+) — layout sidebar ===== */
+@media (min-width: 900px) {
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 192px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .faq-nav {
+    display: block;
+    position: sticky;
+    top: 92px;
+  }
+  .faq-contact-cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-contact-cta-actions {
+    width: auto;
+    flex-wrap: nowrap;
+  }
+  .faq-contact-btn { flex: 0 1 auto; }
+}

@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légales & Confidentialité | CGI MFI Cameroun{% endblock %}
+{% block meta_description %}Mentions Légales et Politique de Confidentialité — CGI MFI. Protection des données, droits des utilisateurs. Microfinance inclusive, Yaoundé, Cameroun.{% endblock %}
+{% block og_title %}Mentions Légales & Confidentialité | CGI MFI Cameroun{% endblock %}
+{% block og_description %}Mentions légales et politique de confidentialité CGI MFI : données collectées, droits d'accès et de suppression. Microfinance inclusive au Cameroun.{% endblock %}
+{% block og_url %}https://www.cgi-mfi.com/cgi-confidentialite{% endblock %}
+{% block canonical %}https://www.cgi-mfi.com/cgi-confidentialite{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/cgi-cgu.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="{{ path('home') }}">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Mentions Légales &amp; Confidentialité</span>
+    </nav>
+    <div class="page-eyebrow">Cadre Juridique &amp; Protection</div>
+    <h1 class="page-title">Mentions Légales<br>&amp; Confidentialité</h1>
+    <p class="page-subtitle">Informations légales sur CGI MFI et politique de protection des données personnelles collectées via ce site.</p>
+    <div class="page-hero-badge">En vigueur : Juin 2026 · Version 1.0</div>
+  </div>
+</div>
+
+<!-- CONTENU -->
+<section class="page-body" aria-label="Mentions légales et politique de confidentialité">
+  <div class="container">
+
+    <p style="font-size:13px;color:var(--gray-500);margin-bottom:32px;">Dernière mise à jour : Juin 2026 · Document applicable à tout utilisateur du site cgi-mfi.com</p>
+
+    <!-- MENTIONS LÉGALES -->
+    <div class="content-section" id="mentions-legales">
+      <h2>1. Mentions Légales</h2>
+      <h3>1.1 Éditeur du site</h3>
+      <p>Le site <strong>cgi-mfi.com</strong> est édité par :</p>
+      <div class="info-box">
+        <h4>CGI MFI - Community Growth Initiative</h4>
+        <p>
+          <strong>Forme juridique :</strong> Coopérative d'Épargne et de Crédit (COOPEC) de 1ère catégorie<br>
+          <strong>Siège social :</strong> Yaoundé, Cameroun<br>
+          <strong>Email :</strong> <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a><br>
+          <strong>Téléphone :</strong> <a href="tel:+237693539586">+237 693 53 95 86</a><br>
+          <strong>Agrément :</strong> Agrément COBAC en cours d'obtention<br>
+          <strong>Horaires :</strong> Lun–Ven : 7h30–16h30 · Sam : 8h–13h
+        </p>
+      </div>
+      <h3>1.2 Directeur de la publication</h3>
+      <p>Le directeur de la publication est le représentant légal de Community Growth Initiative.</p>
+      <h3>1.3 Hébergement</h3>
+      <p>Le site cgi-mfi.com est hébergé par un prestataire tiers. Les coordonnées de l'hébergeur sont disponibles sur demande à l'adresse <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a>.</p>
+      <h3>1.4 Propriété intellectuelle</h3>
+      <p>L'ensemble du contenu du site (textes, images, logos, graphismes, marques) est la propriété exclusive de Community Growth Initiative ou de ses partenaires. Toute reproduction sans autorisation écrite préalable est strictement interdite.</p>
+      <h3>1.5 Liens hypertextes</h3>
+      <p>CGI MFI ne saurait être tenu responsable du contenu des sites tiers vers lesquels des liens sont proposés. La création de liens vers ce site requiert une autorisation préalable.</p>
+    </div>
+
+    <!-- POLITIQUE DE CONFIDENTIALITÉ -->
+    <div class="content-section" id="confidentialite">
+      <h2>2. Politique de Confidentialité</h2>
+      <div class="highlight-box" role="note"><p>CGI MFI s'engage à protéger la vie privée de ses utilisateurs. Cette politique décrit les données collectées, leur usage et vos droits.</p></div>
+      <h3>2.1 Données collectées</h3>
+      <p>CGI MFI collecte des données personnelles via les formulaires présents sur ce site, notamment :</p>
+      <ul><li>Nom et prénom</li><li>Adresse email</li><li>Numéro de téléphone</li><li>Quartier et activité professionnelle</li><li>Type d'investisseur (formulaire investisseur)</li><li>Messages libres (formulaire de contact)</li></ul>
+      <h3>2.2 Finalité du traitement</h3>
+      <p>Les données collectées sont utilisées exclusivement pour :</p>
+      <ul><li>Traiter les demandes d'adhésion et constituer les dossiers membres</li><li>Répondre aux demandes d'information des investisseurs</li><li>Envoyer des informations sur CGI MFI (uniquement avec votre consentement explicite)</li><li>Respecter les obligations réglementaires KYC imposées par la COBAC</li></ul>
+      <h3>2.3 Base légale</h3>
+      <ul><li>Votre consentement explicite (case à cocher)</li><li>L'exécution d'un contrat (dossier d'adhésion)</li><li>Le respect d'obligations légales (réglementation COBAC, OHADA)</li></ul>
+      <h3>2.4 Conservation des données</h3>
+      <p>Vos données sont conservées pendant la durée nécessaire à la finalité pour laquelle elles ont été collectées. Les données de prospects non convertis sont supprimées après 12 mois.</p>
+      <h3>2.5 Absence de transmission à des tiers commerciaux</h3>
+      <p>CGI MFI s'engage formellement à <strong>ne pas transmettre vos données personnelles à des tiers à des fins commerciales</strong>. Seules des transmissions aux autorités compétentes (COBAC, administrations fiscales) peuvent être effectuées lorsque la réglementation l'exige.</p>
+      <h3>2.6 Vos droits</h3>
+      <p>Conformément à la réglementation applicable, vous disposez des droits suivants :</p>
+      <ul><li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles détenues par CGI MFI</li><li><strong>Droit de rectification :</strong> faire corriger des données inexactes ou incomplètes</li><li><strong>Droit de suppression :</strong> demander l'effacement de vos données (sous réserve des obligations légales)</li><li><strong>Droit d'opposition :</strong> vous opposer à certains traitements de vos données</li><li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré et lisible</li></ul>
+      <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <h3>2.7 Cookies</h3>
+      <p>Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage tiers n'est déposé sans votre consentement.</p>
+      <h3>2.8 Sécurité</h3>
+      <p>CGI MFI met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre toute perte, altération ou accès non autorisé.</p>
+      <h3>2.9 Contact Délégué à la Protection des Données</h3>
+      <div class="info-box"><h4>CGI MFI - Responsable Protection des Données</h4><p><a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a> · Community Growth Initiative · Yaoundé, Cameroun · +237 693 53 95 86</p></div>
+    </div>
+
+    <div style="margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="{{ path('home') }}#join" class="btn btn-primary">Devenir Membre CGI</a>
+      <a href="{{ path('cgi_cgu') }}" class="btn btn-outline">Consulter les CGU</a>
+      <a href="{{ path('faq') }}" class="btn btn-outline">Consulter la FAQ</a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

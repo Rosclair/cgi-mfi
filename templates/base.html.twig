@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block meta_description %}CGI MFI — Microfinance inclusive 1ère catégorie à Yaoundé, Cameroun. MICRO-CRÉDIT 2,5%/mois en 48h dès 50 000 FCFA, épargne jusqu'à 8%/an, zéro frais caché. Lancement JANVIER 2027.{% endblock %}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{% block og_title %}CGI MFI — Microfinance Inclusive à Yaoundé, Cameroun{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Microfinance inclusive au Cameroun. MICRO-CRÉDIT 2,5% en 48h dès 50 000 FCFA, épargne jusqu'à 8%/an, zéro frais caché. Lancement JANVIER 2027, Yaoundé.{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{% block og_url %}https://www.cgi-mfi.com/{% endblock %}">
+  <meta property="og:image" content="https://www.cgi-mfi.com/images/logo.png">
+  <meta property="og:locale" content="fr_CM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="#">
+  <meta name="twitter:image" content="https://www.cgi-mfi.com/images/logo.png">
+  <!-- Géolocalisation SEO Cameroun -->
+  <meta name="geo.region" content="CM-CE">
+  <meta name="geo.placename" content="Yaoundé, Cameroun">
+  <meta name="geo.position" content="3.8667;11.5167">
+  <meta name="ICBM" content="3.8667, 11.5167">
+  <link rel="canonical" href="{% block canonical %}https://www.cgi-mfi.com/{% endblock %}">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <title>{% block title %}CGI MFI — Microfinance Inclusive | Yaoundé, Cameroun{% endblock %}</title>
+
+  {% block schema %}{% endblock %}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ asset('css/global.css') }}">
+  {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION -->
+<div id="loadingBar" aria-hidden="true"></div>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="region" aria-label="Actualités en cours">
+  <div class="ticker-inner">
+    <div class="ticker-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+      ACTUALITÉS
+    </div>
+    <div class="ticker-scroll">
+      <div class="ticker-track" id="tickerTrack">
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
+        <span class="ticker-item">Objectif 2031 : 8 000 membres actifs - Extension à 2 agences - Finance inclusive à impact</span>
+        <span class="ticker-item">CGI FINANCE - Lancement officiel JANVIER 2027 - Yaoundé</span>
+        <span class="ticker-item">Entrée à partir de 4 900 FCFA</span>
+        <span class="ticker-item">MICRO-CRÉDIT 2,5% : En 48h garanti - 2,5%/mois dégressif - dès 50 000 FCFA</span>
+        <span class="ticker-item">CGI DJANGUI+ : la tontine formalisée - gérez votre groupe de 5 à 50 membres avec CGI</span>
+        <span class="ticker-item">CGI BUILD : épargne bloquée, jusqu'à 8%/an - zéro frais caché - transparence totale</span>
+        <span class="ticker-item">Partenariat MTN Mobile Money &amp; Orange Money - Paiements digitaux dès le lancement</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar" role="complementary" aria-label="Informations de contact">
+  <div class="top-bar-left">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+      Siège social : Yaoundé - Cameroun
+    </span>
+    <a href="tel:+237693539586">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +237 693 53 95 86
+    </a>
+    <a href="mailto:wh@cgi-mfi.com">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      wh@cgi-mfi.com
+    </a>
+  </div>
+  <div class="top-bar-right">
+    <a href="{{ path('home') }}#join">Ouverture Compte</a>
+    <a href="{{ path('simulateur_credit') }}">Simulateur de Crédit</a>
+    <div class="top-lang" role="navigation" aria-label="Sélection de langue">
+      <button class="active" onclick="switchLang('fr', this)" aria-label="Français">FR</button>
+      <button onclick="switchLang('en', this)" aria-label="English">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="mainNav" aria-label="Navigation principale">
+  <div class="navbar-inner">
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu-id">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
+    <!-- Menu - centre -->
+    <ul class="nav-menu" id="nav-menu-id" role="menubar">
+      <li class="nav-item" role="none">
+        <a href="{{ path('home') }}#about" class="nav-link" role="menuitem" aria-haspopup="menu">
+          CGI
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="{{ path('home') }}#about" role="menuitem">Qui sommes-nous ?</a>
+          <a href="{{ path('home') }}#rse" role="menuitem">Impact &amp; RSE</a>
+          <a href="{{ path('home') }}#leadership" role="menuitem">Leadership</a>
+          <a href="{{ path('home') }}#comite" role="menuitem">Comité de Direction</a>
+          <a href="{{ path('cgi_foundation') }}" role="menuitem">CGI Foundation</a>
+        </div>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="{{ path('home') }}#products" class="nav-link" role="menuitem">Produits &amp; Services</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="{{ path('home') }}#investors" class="nav-link" role="menuitem">Investisseurs</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="{{ path('agenda') }}" class="nav-link" role="menuitem">Agenda</a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="{{ path('faq') }}" class="nav-link" role="menuitem">FAQ</a>
+      </li>
+      <li class="nav-item nav-item-membre" role="none">
+        <a href="{{ path('home') }}#join" class="nav-link" role="menuitem">Devenir Membre</a>
+      </li>
+    </ul>
+
+    <!-- Actions - gauche -->
+    <div class="nav-actions">
+      <a href="{{ path('home') }}#join" class="nav-link nav-sim" role="menuitem">Devenir Membre</a>
+      <a href="{{ path('home') }}#investors" class="btn btn-primary">Investir</a>
+      <button class="btn-ghost" onclick="openSearch()" aria-label="Rechercher" title="Rechercher">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+    </div>
+
+    <!-- Logo - droite -->
+    <a href="{{ path('home') }}" class="nav-logo" aria-label="Accueil CGI">
+      <img src="/images/logo.png" alt="Logo CGI MFI" style="height: 40px; width:auto;">
+    </a>
+
+  </div>
+</nav>
+
+<noscript>
+  <div style="background:#c0392b;color:#fff;padding:16px;text-align:center;">
+    Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.
+  </div>
+</noscript>
+
+{% block body %}{% endblock %}
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="brand">Community Growth Initiative</div>
+      <div class="tagline">empower differently</div>
+      <p>Nous accompagnons les communautés avec une finance proche, transparente et accessible.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cgifinance" class="social-btn" aria-label="Facebook CGI MFI" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor" overflow="hidden" aria-hidden="true" style="width:1em;height:1em;display:block;"><path d="M30.996 16.091c-0.001-8.281-6.714-14.994-14.996-14.994s-14.996 6.714-14.996 14.996c0 7.455 5.44 13.639 12.566 14.8l0.086 0.012v-10.478h-3.808v-4.336h3.808v-3.302c-0.019-0.167-0.029-0.361-0.029-0.557 0-2.923 2.37-5.293 5.293-5.293 0.141 0 0.281 0.006 0.42 0.016l-0.018-0.001c1.199 0.017 2.359 0.123 3.491 0.312l-0.134-0.019v3.69h-1.892c-0.086-0.012-0.185-0.019-0.285-0.019-1.197 0-2.168 0.97-2.168 2.168 0 0.068 0.003 0.135 0.009 0.202l-0.001-0.009v2.812h4.159l-0.665 4.336h-3.494v10.478c7.213-1.174 12.653-7.359 12.654-14.814v-0z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Nos Produits</h4>
+      <a href="{{ path('home') }}#products">MICRO-CRÉDIT</a>
+      <a href="{{ path('home') }}#products">CGI DJANGUI+</a>
+      <a href="{{ path('home') }}#products">CGI BUILD</a>
+      <a href="{{ path('home') }}#products">Crédit Solidaire</a>
+      <a href="{{ path('home') }}#products">Crédit Agricole</a>
+    </div>
+    <div class="footer-col">
+      <h4>CGI FINANCE</h4>
+      <a href="{{ path('home') }}#about">Qui sommes-nous</a>
+      <a href="{{ path('home') }}#rse">Impact &amp; RSE</a>
+      <a href="{{ path('home') }}#investors">Investir</a>
+      <a href="{{ path('home') }}#join">Devenir Membre</a>
+      <a href="{{ path('cgi_foundation') }}">CGI Foundation</a>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Nos Agences</h4>
+      <p>Siège : Yaoundé, Marché Mokolo</p>
+      <h4 style="margin-top:16px;">Contact</h4>
+      <p><a href="tel:+237693539586">+237 693 53 95 86</a></p>
+      <p><a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a></p>
+      <p>Lun–Ven : 7h30–16h30 <br> Sam : 8h–13h</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Community Growth Initiative (CGI) - Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="{{ path('cgi_confidentialite') }}">Mentions Légales</a>
+      <a href="{{ path('cgi_confidentialite') }}">Confidentialité</a>
+      <a href="{{ path('cgi_cgu') }}">CGU</a>
+      <a href="{{ path('sitemap') }}">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="{{ path('home') }}#join" class="float-btn">Devenir Membre CGI</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" role="search" aria-label="Recherche CGI">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <span class="search-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </span>
+      <input type="search" id="searchInput" placeholder="Rechercher dans CGI…"
+             oninput="updateSearch(this.value)" aria-label="Terme de recherche">
+      <button class="search-close" onclick="closeSearch()" aria-label="Fermer la recherche">✕</button>
+    </div>
+    <div id="searchSuggs" class="search-suggs" role="listbox" aria-label="Suggestions"></div>
+  </div>
+</div>
+
+<!-- MODAL SUCCÈS -->
+<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="document.getElementById('successModal').classList.remove('open')" aria-label="Fermer">✕</button>
+    <div class="success-icon success-icon--ok" aria-hidden="true">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+    </div>
+    <h3 id="modalTitle">Merci pour votre intérêt !</h3>
+    <p id="modalMsg">Notre équipe vous contactera dans les 24 heures ouvrables.</p>
+    <button class="btn btn-primary btn-full"
+            onclick="document.getElementById('successModal').classList.remove('open')">Fermer</button>
+  </div>
+</div>
+
+{% if app.flashes('success') is not empty %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var msg = {{ app.flashes('success')|first|json_encode|raw }};
+    document.getElementById('modalMsg').textContent = msg;
+    document.getElementById('successModal').classList.add('open');
+  });
+</script>
+{% endif %}
+{% if app.flashes('error') is not empty %}
+<div id="flashError" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#c0392b;color:#fff;padding:14px 24px;border-radius:8px;font-size:14px;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.2);" role="alert">
+  {{ app.flashes('error')|first }}
+  <button onclick="this.parentElement.remove()" style="background:none;border:none;color:#fff;margin-left:16px;cursor:pointer;font-size:16px;" aria-label="Fermer">✕</button>
+</div>
+{% endif %}
+
+{% block extra_modals %}{% endblock %}
+
+<!-- Scripts -->
+<script src="{{ asset('js/global.js') }}" defer></script>
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

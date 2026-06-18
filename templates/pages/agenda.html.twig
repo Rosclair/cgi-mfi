@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agenda CGI 2026 — Formations & Événements | Yaoundé, Cameroun{% endblock %}
+{% block meta_description %}Agenda CGI MFI : assemblées générales, formations financières et événements communautaires 2026-2027. Yaoundé, Cameroun.{% endblock %}
+{% block og_title %}Agenda CGI — Formations & Événements 2026{% endblock %}
+{% block og_description %}Calendrier des événements CGI MFI : lancement officiel, formations financières et actualités institutionnelles. Yaoundé, Cameroun.{% endblock %}
+{% block og_url %}https://www.cgi-mfi.com/agenda{% endblock %}
+{% block canonical %}https://www.cgi-mfi.com/agenda{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.cgi-mfi.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Agenda", "item": "https://www.cgi-mfi.com/agenda"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="{{ path('home') }}">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Agenda CGI</span>
+    </nav>
+    <div class="page-eyebrow">Agenda &amp; Actualités</div>
+    <h1 class="page-title">Calendrier CGI<br>2026</h1>
+    <p class="page-subtitle">Assemblées générales, formations, événements communautaires et actualités institutionnelles de Community Growth Initiative.</p>
+  </div>
+</div>
+
+<!-- CORPS PRINCIPAL -->
+<div class="agenda-full-wrap">
+  <div class="container">
+
+    <div class="ag-tabs" role="tablist" aria-label="Catégories d'événements">
+      <button class="ag-tab active" role="tab" aria-selected="true" aria-controls="agpanel-events" onclick="switchAgendaTab('events', this)">Événements</button>
+      <button class="ag-tab" role="tab" aria-selected="false" aria-controls="agpanel-news" onclick="switchAgendaTab('news', this)">Actualités</button>
+      <button class="ag-tab" role="tab" aria-selected="false" aria-controls="agpanel-formations" onclick="switchAgendaTab('formations', this)">Formations</button>
+    </div>
+
+    <div class="agenda-full-grid">
+
+      <aside aria-label="Calendrier mensuel">
+        <div class="mini-calendar">
+          <div class="mini-cal-header">
+            <button class="mini-cal-nav" onclick="changeMonth(-1)" aria-label="Mois précédent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <span id="calMonthLabel" aria-live="polite"></span>
+            <button class="mini-cal-nav" onclick="changeMonth(1)" aria-label="Mois suivant"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <div class="mini-cal-grid" role="grid" aria-label="Jours du mois">
+            <div class="cal-dow" aria-label="Lundi">LUN</div>
+            <div class="cal-dow" aria-label="Mardi">MAR</div>
+            <div class="cal-dow" aria-label="Mercredi">MER</div>
+            <div class="cal-dow" aria-label="Jeudi">JEU</div>
+            <div class="cal-dow" aria-label="Vendredi">VEN</div>
+            <div class="cal-dow" aria-label="Samedi">SAM</div>
+            <div class="cal-dow" aria-label="Dimanche">DIM</div>
+            <div id="calDays" style="display: contents;"></div>
+          </div>
+        </div>
+        <div class="cal-legend" aria-label="Légende du calendrier">
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background: var(--red);" aria-hidden="true"></span>Événement CGI</div>
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background: var(--green);" aria-hidden="true"></span>Formation</div>
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background: var(--blue);" aria-hidden="true"></span>AG / Institutionnel</div>
+        </div>
+      </aside>
+
+      <main>
+        <div id="agpanel-events" class="ag-panel active" role="tabpanel">
+          <article class="event-card" aria-label="Lancement Officiel - 22 Janvier">
+            <div class="event-date-badge red" aria-hidden="true"><div class="event-day">22</div><div class="event-month-label">Jan</div></div>
+            <div class="event-body"><div class="event-category red">Lancement Officiel</div><h2 class="event-title">Ouverture Officielle de CGI - Yaoundé</h2><p class="event-desc">Lancement des premiers programmes de formation et d'accompagnement financier</p></div>
+          </article>
+          <article class="event-card featured featured-green" aria-label="Lancement des Formations CGI FINANCE - Février 2027">
+            <div class="event-date-badge green" aria-hidden="true"><div class="event-day">Fév</div><div class="event-month-label">2027</div></div>
+            <div class="event-body"><div class="event-category green">Lancement des Formations CGI FINANCE</div><h2 class="event-title">Démarrage officiel du Centre de Formation CGI FINANCE</h2><p class="event-desc">Premières sessions de formation en éducation financière et entrepreneuriat · Accompagnement des porteurs de projets · Certification des premiers participants · Déploiement du programme de renforcement des capacités.</p></div>
+          </article>
+          <article class="event-card" aria-label="Clôture Annuelle - 15 Décembre">
+            <div class="event-date-badge blue" aria-hidden="true"><div class="event-day">15</div><div class="event-month-label">Déc</div></div>
+            <div class="event-body"><div class="event-category blue">Clôture Annuelle</div><h2 class="event-title">AG Fin d'Année - Distribution Intérêts</h2><p class="event-desc">Clôture exercice 2026 · Distribution intérêts CGI BUILD · Perspectives 2027</p></div>
+          </article>
+        </div>
+
+        <div id="agpanel-news" class="ag-panel" role="tabpanel">
+          <article class="event-card" aria-label="Partenariat CGI FINANCE et ASK INSTITUTE - Mai 2026">
+            <div class="event-emoji-badge green" aria-hidden="true"><span class="badge-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="badge-label">Part.</span></div>
+            <div class="event-body"><div class="event-category green">Partenariat Stratégique · Mai 2026</div><h2 class="event-title">CGI FINANCE et ASK INSTITUTE annoncent un partenariat stratégique</h2><p class="event-desc">Cette collaboration vise à renforcer les compétences des futurs clients et entrepreneurs tout en favorisant une inclusion financière durable au Cameroun.</p></div>
+          </article>
+        </div>
+
+        <div id="agpanel-formations" class="ag-panel" role="tabpanel">
+          <article class="event-card" aria-label="Formation Gestion du Budget - Février 2027">
+            <div class="event-date-badge green" aria-hidden="true"><div class="event-day">Fév</div><div class="event-month-label">2027</div></div>
+            <div class="event-body"><div class="event-category green">Formation · Gratuit</div><h2 class="event-title">Éducation Financière - Session 1 : Gestion du Budget</h2><p class="event-desc">Formation mensuelle gratuite · 2h · Siège CGI Yaoundé · Tous membres</p></div>
+          </article>
+          <article class="event-card" aria-label="Formation Plan d'Affaires - Mars 2027">
+            <div class="event-date-badge green" aria-hidden="true"><div class="event-day">Mars</div><div class="event-month-label">2027</div></div>
+            <div class="event-body"><div class="event-category green">Formation · Gratuit</div><h2 class="event-title">Entrepreneuriat : Rédiger son Plan d'Affaires</h2><p class="event-desc">Module 2 · Experts locaux certifiés · Siège CGI Yaoundé</p></div>
+          </article>
+          <article class="event-card" aria-label="Coaching Individuel - Sur RDV">
+            <div class="event-emoji-badge blue" aria-hidden="true"><span class="badge-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span class="badge-label">Coaching</span></div>
+            <div class="event-body"><div class="event-category blue">Coaching · Sur RDV</div><h2 class="event-title">Coaching Individuel - Emprunteurs ≥ 500 000 FCFA</h2><p class="event-desc">Sessions personnalisées · Suivi mensuel bi-mensuel · MICRO-CRÉDIT 2,5%</p></div>
+          </article>
+        </div>
+      </main>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/agenda.js') }}" defer></script>
+{% endblock %}

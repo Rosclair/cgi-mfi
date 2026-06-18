@@ -1,0 +1,149 @@
+/* ============================================================
+   CGI-FOUNDATION.CSS - Styles de la page CGI Foundation
+   Community Growth Initiative | cgi-mfi.com
+   MOBILE FIRST - Refonte v2 juin 2026
+   ============================================================ */
+
+/* ===== HERO KPIs : 2 cols mobile, 4 cols desktop ===== */
+.hero-kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 36px;
+}
+.hero-kpi {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: clamp(16px, 3vw, 22px);
+  text-align: center;
+}
+.hero-kpi-num {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 900;
+  color: var(--gold);
+}
+.hero-kpi-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 5px;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+}
+
+/* ===== BANDE ODD / SDG : 2 cols mobile ===== */
+.impact-strip {
+  background: var(--dark);
+  padding: clamp(32px, 5vw, 48px) 0;
+}
+.impact-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1200px;
+}
+.impact-strip-item {
+  text-align: center;
+  padding: clamp(16px, 3vw, 24px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.impact-strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+.impact-strip-grid--5 .impact-strip-item:last-child { border-right: none; border-bottom: none; }
+.impact-strip-grid--5 .impact-strip-item:nth-last-child(-n+1) { border-bottom: none; }
+.impact-strip-item:nth-last-child(-n+2) { border-bottom: none; }
+.impact-strip-num {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 900;
+  color: var(--white);
+}
+.impact-strip-gold { color: var(--gold); }
+.impact-strip-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.impact-strip-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 8px;
+  line-height: 1.5;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== GRILLE PROGRAMMES : 1 col mobile ===== */
+.prog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: 28px 0 40px;
+}
+.prog-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 4vw, 28px);
+  transition: var(--transition);
+}
+.prog-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--red-light);
+  transform: translateY(-4px);
+}
+.prog-icon { font-size: 32px; margin-bottom: 14px; }
+.prog-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  color: var(--red); letter-spacing: 1.5px; text-transform: uppercase;
+  background: var(--red-light);
+  padding: 3px 9px; border-radius: 2px; margin-bottom: 10px;
+}
+.prog-title {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 3vw, 19px);
+  font-weight: 700; color: var(--dark);
+  margin-bottom: 8px; margin-top: 8px;
+}
+.prog-card > p {
+  font-size: 14px; color: var(--gray-500);
+  line-height: 1.7; margin-bottom: 12px;
+}
+
+/* ===== PARTENAIRES ===== */
+.partner-row {
+  display: flex; flex-wrap: wrap;
+  gap: 10px; margin: 18px 0;
+}
+.partner-pill {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-size: 13px; font-weight: 600; color: var(--gray-700);
+  transition: var(--transition);
+}
+.partner-pill:hover { border-color: var(--red); color: var(--red); }
+.partner-note { font-size: 12px; font-style: italic; color: var(--gray-500); margin-top: 8px; }
+
+/* ===== SURCHARGE LARGEUR CONTAINER ===== */
+.foundation-body .container { max-width: 1000px; }
+
+/* ===== TABLETTE (768px+) ===== */
+@media (min-width: 768px) {
+  .prog-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== DESKTOP (900px+) ===== */
+@media (min-width: 900px) {
+  .hero-kpis { grid-template-columns: repeat(4, 1fr); }
+  .impact-strip-grid { grid-template-columns: repeat(4, 1fr); }
+  .impact-strip-grid--5 { grid-template-columns: repeat(5, 1fr); }
+  .impact-strip-item { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.1); }
+  .impact-strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .impact-strip-item:last-child { border-right: none; }
+}

@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CGU — Conditions Générales d'Utilisation | CGI MFI Cameroun{% endblock %}
+{% block meta_description %}Conditions Générales d'Utilisation de CGI MFI — Cadre juridique des services de microfinance, droit applicable COBAC CEMAC. Yaoundé, Cameroun.{% endblock %}
+{% block og_title %}CGU — Conditions Générales d'Utilisation | CGI MFI Cameroun{% endblock %}
+{% block og_description %}CGU CGI MFI : accès aux services, crédit, épargne, propriété intellectuelle, droit applicable COBAC CEMAC. Microfinance inclusive au Cameroun.{% endblock %}
+{% block og_url %}https://www.cgi-mfi.com/cgi-cgu{% endblock %}
+{% block canonical %}https://www.cgi-mfi.com/cgi-cgu{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/cgi-cgu.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="{{ path('home') }}">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">CGU</span>
+    </nav>
+    <div class="page-eyebrow">Cadre Juridique</div>
+    <h1 class="page-title">Conditions Générales<br>d'Utilisation</h1>
+    <p class="page-subtitle">En accédant au site web CGI et en utilisant ses services financiers, vous acceptez sans réserve les présentes Conditions Générales d'Utilisation.</p>
+    <div class="page-hero-badge">En vigueur : Juin 2026 · Version 1.0</div>
+  </div>
+</div>
+
+<!-- CONTENU CGU -->
+<section class="page-body" aria-label="Conditions Générales d'Utilisation">
+  <div class="container">
+
+    <p class="cgu-version-note">Dernière mise à jour : Juin 2026 · Document opposable à tout utilisateur du site cgi-mfi.com</p>
+
+    <div class="highlight-box" role="note">
+      <p><strong>Important :</strong> Ce document régit l'utilisation du site web CGI et la souscription à ses services de microfinance. Veuillez le lire attentivement avant toute utilisation ou souscription.</p>
+    </div>
+
+    <nav class="cgu-toc" aria-label="Navigation dans les CGU">
+      <div class="cgu-toc-title">Sommaire</div>
+      <a href="#cgu-editeur">1. Éditeur</a>
+      <a href="#cgu-acces">2. Accès aux Services</a>
+      <a href="#cgu-credit">3. Services de Crédit</a>
+      <a href="#cgu-epargne">4. Services d'Épargne</a>
+      <a href="#cgu-pi">5. Propriété Intellectuelle</a>
+      <a href="#cgu-responsabilite">6. Responsabilité</a>
+      <a href="#cgu-donnees">7. Données Personnelles</a>
+      <a href="#cgu-droit">8. Droit Applicable</a>
+      <a href="#cgu-modification">9. Modifications</a>
+      <a href="#cgu-contact">10. Contact</a>
+    </nav>
+
+    <div class="content-section" id="cgu-editeur">
+      <h2>1. Identification de l'Éditeur</h2>
+      <p>Le site <strong>cgi-mfi.com</strong> est édité par <strong>Community Growth Initiative (CGI)</strong>, COOP-CA de 1ère catégorie dont le siège social est à Yaoundé, Cameroun. Agrément COBAC en cours d'obtention.</p>
+      <div class="info-box"><h4>wh@cgi-mfi.com</h4><p>Community Growth Initiative · Yaoundé, Cameroun · +237 693 53 95 86 · Lun–Ven : 7h30–16h30 · Sam : 8h–13h</p></div>
+    </div>
+
+    <div class="content-section" id="cgu-acces">
+      <h2>2. Conditions d'Accès aux Services</h2>
+      <p>L'accès aux services CGI est réservé aux personnes remplissant l'ensemble des conditions suivantes :</p>
+      <ul>
+        <li>Avoir au moins 18 ans révolus</li>
+        <li>Être résident ou ressortissant camerounais en règle</li>
+        <li>Fournir des informations exactes, complètes et à jour lors de l'inscription</li>
+        <li>Ne pas utiliser les services à des fins illicites ou contraires aux bonnes mœurs</li>
+        <li>Accepter sans réserve les présentes CGU ainsi que la <a href="{{ path('cgi_confidentialite') }}">Politique de Confidentialité</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section" id="cgu-credit">
+      <h2>3. Services de Crédit - Dispositions Spécifiques</h2>
+      <h3>3.1 Instruction des demandes</h3>
+      <ul><li>Toute demande fait l'objet d'une instruction conformément à la politique de crédit CGI</li><li>CGI se réserve le droit de refuser toute demande sans avoir à s'en justifier</li><li>Le taux applicable est celui en vigueur à la date de signature du contrat de crédit</li><li>Le dossier complet (pièces KYC, justificatif d'activité) doit être fourni avant toute décision</li></ul>
+      <h3>3.2 Remboursement</h3>
+      <ul><li>Tout retard génère des pénalités conformément aux modalités du contrat signé</li><li>En cas de défaut persistant, CGI peut recourir aux voies légales de recouvrement</li><li>Le remboursement anticipé est possible sans pénalité supplémentaire</li><li>Les mensualités sont exigibles aux dates fixées dans l'échéancier contractuel</li></ul>
+      <h3>3.3 Taux Effectif Global (TEG)</h3>
+      <p>Le TEG est communiqué avant toute signature, calculé conformément à la réglementation CEMAC sur le crédit à la consommation. Il intègre le taux d'intérêt nominal, les frais de dossier et toutes charges obligatoires. Aucun frais caché ne peut être réclamé postérieurement à la signature du contrat.</p>
+    </div>
+
+    <div class="content-section" id="cgu-epargne">
+      <h2>4. Services d'Épargne</h2>
+      <ul><li>Les taux d'intérêt affichés sont garantis à la signature pour les produits bloqués</li><li>Les retraits anticipés sur comptes bloqués sont soumis aux pénalités contractuelles prévues</li><li>Le dépôt minimum d'ouverture est défini dans la grille tarifaire en vigueur</li><li>CGI s'engage à maintenir des ratios prudentiels conformes aux exigences COBAC</li></ul>
+    </div>
+
+    <div class="content-section" id="cgu-pi">
+      <h2>5. Propriété Intellectuelle</h2>
+      <p>L'ensemble du contenu du site cgi-mfi.com (textes, images, logos, graphismes, marques, typographies) est protégé par le droit de la propriété intellectuelle en vigueur au Cameroun et par les conventions internationales applicables.</p>
+      <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie du contenu, par quelque procédé que ce soit, est strictement interdite sans autorisation écrite préalable de CGI.</p>
+    </div>
+
+    <div class="content-section" id="cgu-responsabilite">
+      <h2>6. Limitation de Responsabilité</h2>
+      <ul><li>CGI ne garantit pas l'accès permanent et ininterrompu au site web</li><li>Les informations du site sont purement informatives et ne constituent pas un conseil financier personnalisé</li><li>CGI décline toute responsabilité pour utilisation frauduleuse des identifiants due à une négligence de l'utilisateur</li><li>CGI ne saurait être tenue responsable des dommages indirects résultant de l'utilisation du site</li></ul>
+    </div>
+
+    <div class="content-section" id="cgu-donnees">
+      <h2>7. Données Personnelles</h2>
+      <p>Le traitement des données personnelles des utilisateurs est régi par la <a href="{{ path('cgi_confidentialite') }}">Politique de Confidentialité CGI</a>, document distinct consultable sur ce site. CGI s'engage à respecter la réglementation camerounaise en vigueur relative à la protection des données personnelles.</p>
+    </div>
+
+    <div class="content-section" id="cgu-droit">
+      <h2>8. Droit Applicable et Litiges</h2>
+      <p>Les présentes CGU sont régies par le droit camerounais. Tout litige sera soumis aux tribunaux compétents de Yaoundé après tentative obligatoire de règlement amiable d'une durée minimale de 30 jours.</p>
+      <p>Pour les litiges financiers régulés, la compétence COBAC peut être invoquée conformément à la réglementation CEMAC applicable aux établissements de microfinance.</p>
+    </div>
+
+    <div class="content-section" id="cgu-modification">
+      <h2>9. Modification des CGU</h2>
+      <p>CGI se réserve le droit de modifier les présentes Conditions Générales à tout moment. Les modifications entrent en vigueur dès leur publication sur le site. La version en vigueur est toujours consultable sur cette page.</p>
+    </div>
+
+    <div class="content-section" id="cgu-contact">
+      <h2>10. Contact</h2>
+      <div class="info-box"><h4>CGI - Service Juridique &amp; Conformité</h4><p><a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a> · Community Growth Initiative · Yaoundé, Cameroun · +237 693 53 95 86</p></div>
+      <div class="cgu-cta-row">
+        <a href="{{ path('home') }}#join" class="btn btn-primary">Devenir Membre CGI</a>
+        <a href="{{ path('cgi_confidentialite') }}" class="btn btn-outline">Politique de Confidentialité</a>
+        <a href="{{ path('faq') }}" class="btn btn-outline">Consulter la FAQ</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/cgi-cgu.js') }}" defer></script>
+{% endblock %}

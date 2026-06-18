@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan du Site | CGI MFI — Microfinance Cameroun{% endblock %}
+{% block meta_description %}Plan du site CGI MFI — Navigation complète : produits de microfinance, services, investisseurs, agenda, FAQ. Microfinance inclusive à Yaoundé, Cameroun.{% endblock %}
+{% block og_title %}Plan du Site | CGI MFI — Microfinance Cameroun{% endblock %}
+{% block og_description %}Toutes les pages et sections du site CGI MFI : produits de microfinance, agenda, FAQ, investisseurs, espace membre. Yaoundé, Cameroun.{% endblock %}
+{% block og_url %}https://www.cgi-mfi.com/sitemap{% endblock %}
+{% block canonical %}https://www.cgi-mfi.com/sitemap{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/sitemap.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="{{ path('home') }}">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Plan du Site</span>
+    </nav>
+    <div class="page-eyebrow">Navigation</div>
+    <h1 class="page-title">Plan du Site</h1>
+    <p class="page-subtitle">Retrouvez rapidement toutes les pages et sections du site CGI - produits, services, investisseurs, agenda et informations légales.</p>
+    <div class="sitemap-hero-meta">
+      <div class="sitemap-hero-meta-item"><span class="sitemap-hero-meta-dot" aria-hidden="true"></span>6 rubriques</div>
+      <div class="sitemap-hero-meta-item"><span class="sitemap-hero-meta-dot" aria-hidden="true"></span>Toutes les pages</div>
+      <div class="sitemap-hero-meta-item"><span class="sitemap-hero-meta-dot" aria-hidden="true"></span>Mis à jour : Janvier 2027</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENU -->
+<section class="page-body sitemap-body" aria-label="Plan du site">
+  <div class="container">
+
+    <div class="sitemap-intro" role="note">
+      <span class="sitemap-intro-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+      </span>
+      <p>Ce plan du site recense l'ensemble des pages et sections disponibles sur cgi-mfi.com. Utilisez les liens ci-dessous pour accéder directement à la rubrique souhaitée.</p>
+    </div>
+
+    <div class="sitemap-grid">
+
+      <div class="sitemap-col">
+        <h2>Accueil &amp; Institution</h2>
+        <a href="{{ path('home') }}">Page d'accueil</a>
+        <a href="{{ path('home') }}#about">Notre Mission</a>
+        <a href="{{ path('home') }}#about">Vision 2031</a>
+        <a href="{{ path('home') }}#about">Nos Valeurs</a>
+        <a href="{{ path('home') }}#leadership">Gouvernance</a>
+        <a href="{{ path('home') }}#rse">Impact &amp; RSE</a>
+        <a href="{{ path('cgi_foundation') }}">CGI Foundation</a>
+      </div>
+
+      <div class="sitemap-col">
+        <h2>Nos Produits</h2>
+        <a href="{{ path('home') }}#products">MICRO-CRÉDIT - Crédit 48h</a>
+        <a href="{{ path('home') }}#products">CGI DJANGUI+ - Tontine Digitale</a>
+        <a href="{{ path('home') }}#products">CGI BUILD - Épargne 8%/an</a>
+        <a href="{{ path('home') }}#products">Crédit Solidaire Groupe</a>
+        <a href="{{ path('home') }}#products">Crédit Agricole</a>
+        <a href="{{ path('home') }}#products">Mobile Money</a>
+        <a href="{{ path('home') }}#products">Formation Entrepreneuriale</a>
+        <a href="{{ path('home') }}#products">Micro-Assurance</a>
+      </div>
+
+      <div class="sitemap-col">
+        <h2>Outils &amp; Services</h2>
+        <a href="{{ path('simulateur_credit') }}">Simulateur de Crédit</a>
+        <a href="{{ path('home') }}#espace">Espace Membre</a>
+        <a href="{{ path('agenda') }}">Agenda &amp; Événements</a>
+        <a href="{{ path('faq') }}">Questions Fréquentes</a>
+      </div>
+
+      <div class="sitemap-col">
+        <h2>Investisseurs</h2>
+        <a href="{{ path('home') }}#investors">Présentation Investisseurs</a>
+        <a href="{{ path('home') }}#investors">Projections Financières</a>
+        <a href="{{ path('home') }}#investors">Impact ESG &amp; ODD</a>
+        <a href="{{ path('home') }}#investors">Dossier Agrément COBAC</a>
+      </div>
+
+      <div class="sitemap-col">
+        <h2>Rejoindre CGI</h2>
+        <a href="{{ path('home') }}#join">Devenir Membre Fondateur</a>
+        <a href="{{ path('home') }}#join">Formulaire d'Inscription</a>
+        <a href="{{ path('home') }}#impact">Nos Chiffres Clés</a>
+      </div>
+
+      <div class="sitemap-col">
+        <h2>Informations Légales</h2>
+        <a href="{{ path('cgi_confidentialite') }}">Politique de Confidentialité</a>
+        <a href="{{ path('cgi_cgu') }}">Conditions Générales d'Utilisation</a>
+        <a href="{{ path('sitemap') }}" aria-current="page">Plan du Site</a>
+        <a href="{{ path('faq') }}">FAQ</a>
+        <a href="{{ path('cgi_foundation') }}">CGI Foundation</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/cgi-cgu.js') }}" defer></script>
+{% endblock %}

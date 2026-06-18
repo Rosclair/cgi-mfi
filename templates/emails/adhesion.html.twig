@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouvelle demande d'adhésion — CGI MFI</title>
+<style>
+  body { margin: 0; padding: 0; background: #f5f5f5; font-family: Arial, sans-serif; }
+  .wrap { max-width: 600px; margin: 32px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  .header { background: #1a1a2e; padding: 28px 32px; }
+  .header h1 { margin: 0; color: #c8a84b; font-size: 20px; font-weight: 700; letter-spacing: .5px; }
+  .header p { margin: 4px 0 0; color: #aaa; font-size: 13px; }
+  .badge { display: inline-block; background: #c8a84b; color: #1a1a2e; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+  .body { padding: 28px 32px; }
+  .row { display: flex; gap: 16px; margin-bottom: 0; }
+  .field { margin-bottom: 16px; flex: 1; }
+  .field label { display: block; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+  .field span { display: block; font-size: 15px; color: #1a1a2e; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+  .footer { background: #f8f8f8; padding: 16px 32px; font-size: 12px; color: #999; text-align: center; }
+  .footer a { color: #c8a84b; text-decoration: none; }
+  .alert { background: #fff8e8; border-left: 4px solid #c8a84b; padding: 12px 16px; border-radius: 0 6px 6px 0; margin-bottom: 20px; font-size: 13px; color: #555; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>CGI MFI — Community Growth Initiative</h1>
+    <p>Nouvelle demande d'adhésion reçue</p>
+  </div>
+  <div class="body">
+    <div class="badge">Demande d'adhésion</div>
+    <div class="alert">À traiter sous <strong>24h ouvrables</strong>. Contacter le prospect par téléphone en priorité.</div>
+
+    <div class="row">
+      <div class="field"><label>Prénom</label><span>{{ prenom }}</span></div>
+      <div class="field"><label>Nom</label><span>{{ nom }}</span></div>
+    </div>
+    <div class="field"><label>Téléphone</label><span>{{ telephone }}</span></div>
+    {% if email %}<div class="field"><label>Email</label><span>{{ email }}</span></div>{% endif %}
+    <hr>
+    <div class="field"><label>Quartier</label><span>{{ quartier }}</span></div>
+    <div class="field"><label>Activité</label><span>{{ activite }}</span></div>
+    {% if interet %}<div class="field"><label>Intérêt principal</label><span>{{ interet }}</span></div>{% endif %}
+  </div>
+  <div class="footer">
+    <p>Email généré automatiquement par le site <a href="https://www.cgi-mfi.com">cgi-mfi.com</a></p>
+    <p>Community Growth Initiative · Yaoundé, Cameroun · +237 693 53 95 86</p>
+  </div>
+</div>
+</body>
+</html>
