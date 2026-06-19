@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur serveur (500) | CGI MFI{% endblock %}
+{% block meta_description %}Une erreur technique est survenue. Notre équipe en est informée. Retournez à l'accueil CGI MFI.{% endblock %}
+
+{% block stylesheets %}
+<style>
+  .error-page { min-height: 72vh; display: flex; align-items: center; background: var(--surface-1, #f8f8f8); }
+  .error-inner { max-width: 640px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+  .error-code { font-size: clamp(96px, 18vw, 160px); font-weight: 900; line-height: 1; color: #c0392b; letter-spacing: -4px; }
+  .error-title { font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: var(--text-primary, #1a1a2e); margin: 8px 0 16px; }
+  .error-desc { font-size: 16px; color: var(--text-secondary, #555); line-height: 1.7; margin-bottom: 40px; }
+  .error-sep { width: 48px; height: 3px; background: #c0392b; margin: 0 auto 32px; border-radius: 2px; }
+  .error-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+  .error-contact { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 16px rgba(0,0,0,.06); font-size: 14px; color: #555; }
+  .error-contact a { color: var(--gold, #c8a84b); font-weight: 600; text-decoration: none; }
+</style>
+{% endblock %}
+
+{% block body %}
+<main class="error-page" role="main" aria-labelledby="error-heading">
+  <div class="error-inner">
+    <div class="error-code" aria-hidden="true">500</div>
+    <div class="error-sep"></div>
+    <h1 class="error-title" id="error-heading">Erreur interne du serveur</h1>
+    <p class="error-desc">
+      Une erreur technique inattendue est survenue de notre côté.<br>
+      Notre équipe en a été automatiquement informée. Réessayez dans quelques minutes.
+    </p>
+
+    <div class="error-links">
+      <a href="{{ path('home') }}" class="btn btn-primary">← Retour à l'accueil</a>
+    </div>
+
+    <div class="error-contact">
+      Si l'erreur persiste, contactez-nous directement :<br>
+      <a href="mailto:wh@cgi-mfi.com">wh@cgi-mfi.com</a> &nbsp;·&nbsp;
+      <a href="tel:+237693539586">+237 693 53 95 86</a>
+    </div>
+  </div>
+</main>
+{% endblock %}

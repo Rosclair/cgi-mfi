@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur {{ status_code }} | CGI MFI{% endblock %}
+{% block meta_description %}Une erreur est survenue. Retournez à l'accueil CGI MFI — Microfinance inclusive à Yaoundé, Cameroun.{% endblock %}
+
+{% block stylesheets %}
+<style>
+  .error-page { min-height: 72vh; display: flex; align-items: center; background: var(--surface-1, #f8f8f8); }
+  .error-inner { max-width: 640px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+  .error-code { font-size: clamp(96px, 18vw, 160px); font-weight: 900; line-height: 1; color: var(--gold, #c8a84b); letter-spacing: -4px; }
+  .error-title { font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: var(--text-primary, #1a1a2e); margin: 8px 0 16px; }
+  .error-desc { font-size: 16px; color: var(--text-secondary, #555); line-height: 1.7; margin-bottom: 40px; }
+  .error-sep { width: 48px; height: 3px; background: var(--gold, #c8a84b); margin: 0 auto 32px; border-radius: 2px; }
+  .error-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+</style>
+{% endblock %}
+
+{% block body %}
+<main class="error-page" role="main" aria-labelledby="error-heading">
+  <div class="error-inner">
+    <div class="error-code" aria-hidden="true">{{ status_code }}</div>
+    <div class="error-sep"></div>
+    <h1 class="error-title" id="error-heading">{{ status_text }}</h1>
+    <p class="error-desc">
+      Une erreur inattendue est survenue.<br>
+      Retournez à l'accueil ou contactez-nous si le problème persiste.
+    </p>
+
+    <div class="error-links">
+      <a href="{{ path('home') }}" class="btn btn-primary">← Retour à l'accueil</a>
+      <a href="mailto:wh@cgi-mfi.com" class="btn btn-outline">Contacter CGI</a>
+    </div>
+  </div>
+</main>
+{% endblock %}
