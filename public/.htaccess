@@ -30,6 +30,10 @@ ErrorDocument 503 /index.php
     Options -MultiViews
     RewriteEngine On
 
+    # Force www — redirect non-www to www (301 permanent)
+    RewriteCond %{HTTP_HOST} ^cgi-mfi\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.cgi-mfi.com/$1 [R=301,L]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # temporary version in some directory, and the PATH_INFO processing was not
